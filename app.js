@@ -1073,6 +1073,9 @@ if (themeBtn) {
   });
 }
 
+// ── SIDEBAR TOGGLE & PERSISTENCE ──────────────────────────────────────────
+const appEl = document.getElementById("app");
+
 // ── NOTES PANEL ───────────────────────────────────────────────────────────
 const notesPanel = document.getElementById('notes-panel');
 const notesArea  = document.getElementById('notes-area');
@@ -1126,9 +1129,6 @@ if (savedNotesPanel === 'expanded') {
 } else {
   appEl.classList.add('notes-collapsed');
 }
-
-// ── SIDEBAR TOGGLE & PERSISTENCE ──────────────────────────────────────────
-const appEl = document.getElementById("app");
 const sidebarToggleBtn = document.getElementById("sidebar-toggle");
 const sidebarCloseBtn = document.getElementById("sidebar-close-btn");
 const sidebarBackdrop = document.getElementById("sidebar-backdrop");
