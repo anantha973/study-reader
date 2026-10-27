@@ -14,6 +14,21 @@ const state = {
   penDrag: null,
 };
 
+// ── NOTES HELPERS (defined early so openFile() can use them) ──────────────
+function getNotesKey(path) {
+  return `study_notes_${path || '__global__'}`;
+}
+function loadNotes(path) {
+  return localStorage.getItem(getNotesKey(path)) || '';
+}
+function saveNotes(path, text) {
+  if (text) {
+    localStorage.setItem(getNotesKey(path), text);
+  } else {
+    localStorage.removeItem(getNotesKey(path));
+  }
+}
+
 // ── FETCH HELPERS ─────────────────────────────────────────────────────────
 async function apiGet(url) {
   const r = await fetch(url);
@@ -323,6 +338,11 @@ async function openFile(filePath, course, fileName) {
   document.getElementById("error-box").style.display = "none";
   document.getElementById("md-body").style.display = "none";
   document.getElementById("loading").style.display = "block";
+
+  // Load persisted notes for this file
+  if (notesArea) {
+    notesArea.value = loadNotes(filePath);
+  }
 
   await loadContent(filePath);
 }
@@ -1007,6 +1027,8 @@ document.addEventListener("keydown", (e) => {
     setHighlighterTool("eraser");
   } else if (e.key.toLowerCase() === "r" && !e.metaKey && !e.ctrlKey) {
     syncNotes();
+  } else if (e.key.toLowerCase() === "n" && !e.metaKey && !e.ctrlKey) {
+    toggleNotesPanel();
   }
 });
 
@@ -1049,6 +1071,60 @@ if (themeBtn) {
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
     applyTheme(isDark ? "light" : "dark");
   });
+}
+
+// ── NOTES PANEL ───────────────────────────────────────────────────────────
+const notesPanel = document.getElementById('notes-panel');
+const notesArea  = document.getElementById('notes-area');
+const notesToggleBtn = document.getElementById('notes-toggle-btn');
+const notesCloseBtn  = document.getElementById('notes-close-btn');
+
+let notesSaveTimer = null;
+if (notesArea) {
+  notesArea.addEventListener('input', () => {
+    clearTimeout(notesSaveTimer);
+    notesSaveTimer = setTimeout(() => {
+      saveNotes(state.currentPath, notesArea.value);
+    }, 400);
+  });
+}
+
+function toggleNotesPanel(forceShow) {
+  const shouldCollapse = (forceShow !== undefined)
+    ? !forceShow
+    : !appEl.classList.contains('notes-collapsed');
+
+  if (shouldCollapse) {
+    appEl.classList.add('notes-collapsed');
+    localStorage.setItem('study_reader_notes_panel', 'collapsed');
+    if (notesToggleBtn) {
+      notesToggleBtn.classList.remove('active');
+      notesToggleBtn.title = 'Open Notes Panel (Key: N)';
+    }
+  } else {
+    appEl.classList.remove('notes-collapsed');
+    localStorage.setItem('study_reader_notes_panel', 'expanded');
+    if (notesToggleBtn) {
+      notesToggleBtn.classList.add('active');
+      notesToggleBtn.title = 'Collapse Notes Panel (Key: N)';
+    }
+    if (notesArea) notesArea.focus();
+  }
+}
+
+if (notesToggleBtn) notesToggleBtn.addEventListener('click', () => toggleNotesPanel());
+if (notesCloseBtn)  notesCloseBtn.addEventListener('click',  () => toggleNotesPanel(false));
+
+// Restore notes panel state (default: collapsed)
+const savedNotesPanel = localStorage.getItem('study_reader_notes_panel');
+if (savedNotesPanel === 'expanded') {
+  appEl.classList.remove('notes-collapsed');
+  if (notesToggleBtn) {
+    notesToggleBtn.classList.add('active');
+    notesToggleBtn.title = 'Collapse Notes Panel (Key: N)';
+  }
+} else {
+  appEl.classList.add('notes-collapsed');
 }
 
 // ── SIDEBAR TOGGLE & PERSISTENCE ──────────────────────────────────────────

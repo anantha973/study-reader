@@ -994,6 +994,79 @@ mark.study-hl-red {
   margin: 24px 0;
 }
 
+/* ── NOTES PANEL (right-side collapsible) ───────────────────────── */
+#notes-panel {
+  width: 280px;
+  min-width: 280px;
+  background: var(--bg-sidebar);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: margin-right 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  order: 10;
+}
+
+#app.notes-collapsed #notes-panel {
+  margin-right: -280px;
+}
+
+#notes-panel-header {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#notes-panel-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+#notes-area {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.7;
+  padding: 14px 16px;
+  overflow-y: auto;
+}
+
+#notes-area::placeholder {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+#notes-area::-webkit-scrollbar { width: 4px; }
+#notes-area::-webkit-scrollbar-track { background: transparent; }
+#notes-area::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+
+/* Notes toggle button in topbar — active accent state */
+#notes-toggle-btn.active {
+  color: var(--accent);
+  border-color: var(--accent-glow);
+  background: var(--accent-dim);
+}
+
+@media (max-width: 768px) {
+  #notes-panel {
+    display: none;
+  }
+}
+
 /* ── SCROLLBAR (main) ──────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
