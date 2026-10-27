@@ -18,5 +18,4 @@ Interactive study notes dashboard for **M.Sc. Medical Systems Engineering** at *
 - **Clinical Aspects in Imaging and Radiation Therapy**
 - **Introduction to Programming Techniques in Engineering**
 - **Mathematical Foundations**
-- **Solution Design in Medical Engineering**
 - **German (Deutsch)** (A1/A2 Vocabulary, Grammar, Thematic Units & Cheat Sheets)
