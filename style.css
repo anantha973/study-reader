@@ -1005,7 +1005,6 @@ mark.study-hl-red {
   overflow: hidden;
   flex-shrink: 0;
   transition: margin-right 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-  order: 10;
 }
 
 #app.notes-collapsed #notes-panel {
