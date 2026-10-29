@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1020" width="100%" height="100%" style="background:#080c15; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Node Gradients -->
+    <linearGradient id="queryNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="apiNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="nerNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#5b21b6" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="fusionNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#115e59" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="interlockNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7f1d1d" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="llmNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#6b21a8" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="destNodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Lateral Feed Gradients -->
+    <linearGradient id="latPatientGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="latGraphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="latGuideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082f49" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Drop Shadows & Glows -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Markers -->
+    <marker id="arrMain" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrLateralL" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#818cf8"/>
+    </marker>
+    <marker id="arrLateralR" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#f87171"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#4ade80"/>
+    </marker>
+  </defs>
+
+  <!-- Background Grid -->
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.3"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- ==================== HEADER ==================== -->
+  <g transform="translate(50, 20)">
+    <rect x="0" y="0" width="1180" height="65" rx="10" fill="url(#headerGrad)" stroke="#334155" stroke-width="1.2" filter="url(#shadow)"/>
+    <text x="25" y="36" fill="#f8fafc" font-size="21" font-weight="800" letter-spacing="0.5">ICU COPILOT — CLINICAL QUERY FLOW ARCHITECTURE</text>
+    <text x="25" y="54" fill="#94a3b8" font-size="12" font-weight="400">Primary Query Lifecycle (Central Spine) with Lateral Knowledge &amp; Telemetry Feed Convergence</text>
+    
+    <rect x="1005" y="16" width="150" height="32" rx="6" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1"/>
+    <text x="1080" y="36" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">AIR-GAPPED LOCAL CDS</text>
+  </g>
+
+  <!-- ==================== LATERAL FEED A (LEFT): REAL-TIME PATIENT TELEMETRY ==================== -->
+  <g transform="translate(50, 250)">
+    <rect x="0" y="0" width="275" height="320" rx="10" fill="url(#latPatientGrad)" stroke="#4338ca" stroke-width="1.2" filter="url(#shadow)"/>
+    
+    <!-- Feed Header -->
+    <rect x="12" y="12" width="251" height="30" rx="5" fill="#312e81" stroke="#6366f1" stroke-width="0.8"/>
+    <text x="22" y="32" fill="#c7d2fe" font-size="11" font-weight="700">LATERAL FEED A: PATIENT STATE</text>
+
+    <!-- Contents -->
+    <text x="14" y="65" fill="#f8fafc" font-size="13" font-weight="700">Dynamic Patient Subgraph</text>
+    <text x="14" y="83" fill="#94a3b8" font-size="11">• In-Memory NetworkX DiGraph</text>
+    
+    <rect x="12" y="96" width="251" height="110" rx="6" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+    <text x="22" y="118" fill="#e2e8f0" font-size="11" font-weight="600">Active Patient Profile (Bed 4):</text>
+    <text x="22" y="136" fill="#cbd5e1" font-size="10.5">• Diagnosis: <tspan fill="#fca5a5" font-weight="600">Angina Pectoris</tspan></text>
+    <text x="22" y="152" fill="#cbd5e1" font-size="10.5">• Current Med: <tspan fill="#93c5fd" font-weight="600">Nitroglycerin IV</tspan></text>
+    <text x="22" y="168" fill="#cbd5e1" font-size="10.5">• Vitals: HR 98, MAP 68, SpO2 96%</text>
+    <text x="22" y="184" fill="#cbd5e1" font-size="10.5">• Triage Score: <tspan fill="#fbbf24" font-weight="700">AMBER</tspan> (NEWS2 = 5)</text>
+
+    <text x="14" y="230" fill="#a5b4fc" font-size="11" font-weight="600">subgraph_retriever.py</text>
+    <text x="14" y="248" fill="#94a3b8" font-size="10.5">Linearizes active clinical state,</text>
+    <text x="14" y="264" fill="#94a3b8" font-size="10.5">meds, and severity into prompt</text>
+    
+    <rect x="12" y="280" width="251" height="26" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="0.8"/>
+    <text x="137" y="297" fill="#c7d2fe" font-size="10" font-weight="600" text-anchor="middle">Fed dynamically into Fusion Hub ➔</text>
+  </g>
+
+  <!-- ==================== LATERAL FEED B (RIGHT): GLOBAL CLINICAL KNOWLEDGE ==================== -->
+  <g transform="translate(955, 250)">
+    <rect x="0" y="0" width="275" height="320" rx="10" fill="url(#latGraphGrad)" stroke="#059669" stroke-width="1.2" filter="url(#shadow)"/>
+    
+    <!-- Feed Header -->
+    <rect x="12" y="12" width="251" height="30" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="0.8"/>
+    <text x="22" y="32" fill="#a7f3d0" font-size="11" font-weight="700">LATERAL FEED B: MEDICAL BASES</text>
+
+    <!-- Contents: PrimeKG -->
+    <text x="14" y="65" fill="#f8fafc" font-size="13" font-weight="700">1. PrimeKG Knowledge Graph</text>
+    <text x="14" y="83" fill="#6ee7b7" font-size="10.5">• 129,375 nodes · 4M precision edges</text>
+    <text x="14" y="99" fill="#a7f3d0" font-size="10.5">• Seed-to-Seed Clinical Alert Extractor</text>
+    <text x="20" y="115" fill="#cbd5e1" font-size="10">• <tspan fill="#fca5a5" font-weight="600">Nitroglycerin ➔ Sildenafil</tspan></text>
+    <text x="26" y="130" fill="#fed7aa" font-size="9.5">[synergistic interaction: hypotension]</text>
+
+    <line x1="12" y1="145" x2="263" y2="145" stroke="#065f46" stroke-width="1"/>
+
+    <!-- Contents: Vector RAG -->
+    <text x="14" y="168" fill="#f8fafc" font-size="13" font-weight="700">2. Vector Guidelines RAG</text>
+    <text x="14" y="186" fill="#6ee7b7" font-size="10.5">• FAISS Index over AHA / NIH Guidelines</text>
+    <text x="14" y="202" fill="#cbd5e1" font-size="10">• Retrieves Top-3 Procedural Chunks:</text>
+    <text x="20" y="218" fill="#a7f3d0" font-size="9.5">"PDE5 inhibitors must not be given with"</text>
+    <text x="20" y="232" fill="#a7f3d0" font-size="9.5">"nitrates due to fatal circulatory collapse."</text>
+
+    <text x="14" y="262" fill="#34d399" font-size="11" font-weight="600">retriever.py (sub-millisecond)</text>
+    
+    <rect x="12" y="280" width="251" height="26" rx="4" fill="#022c22" stroke="#34d399" stroke-width="0.8"/>
+    <text x="137" y="297" fill="#a7f3d0" font-size="10" font-weight="600" text-anchor="middle">⬅ Fed dynamically into Fusion Hub</text>
+  </g>
+
+
+  <!-- ==================== CENTRAL QUERY HIGHWAY (THE MAIN VERTICAL SPINE) ==================== -->
+
+  <!-- STEP 1: QUERY ORIGIN (DOCTOR ASKS) -->
+  <g transform="translate(365, 105)">
+    <rect x="0" y="0" width="550" height="74" rx="10" fill="url(#queryNodeGrad)" stroke="#60a5fa" stroke-width="1.4" filter="url(#shadow)"/>
+    <circle cx="28" cy="37" r="14" fill="#1e40af" stroke="#93c5fd" stroke-width="1.2"/>
+    <text x="28" y="42" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">1</text>
+    
+    <text x="56" y="28" fill="#ffffff" font-size="14" font-weight="800">DOCTOR ASKS CLINICAL QUERY (Query Inception)</text>
+    <rect x="56" y="38" width="475" height="26" rx="4" fill="#0f172a" fill-opacity="0.6"/>
+    <text x="66" y="55" fill="#93c5fd" font-size="11" font-style="italic">"Can this patient taking nitroglycerin also take Viagra (sildenafil)?"</text>
+    <text x="475" y="26" fill="#bfdbfe" font-size="10" font-weight="600">Bedside UI</text>
+  </g>
+
+  <!-- Flow 1 -> 2 -->
+  <path d="M 640 179 L 640 205" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrMain)" />
+
+  <!-- STEP 2: FASTAPI ROUTER GATEWAY -->
+  <g transform="translate(410, 207)">
+    <rect x="0" y="0" width="460" height="52" rx="8" fill="url(#apiNodeGrad)" stroke="#38bdf8" stroke-width="1.2" filter="url(#shadow)"/>
+    <circle cx="24" cy="26" r="12" fill="#075985" stroke="#7dd3fc" stroke-width="1"/>
+    <text x="24" y="30" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">2</text>
+    <text x="48" y="24" fill="#ffffff" font-size="13" font-weight="700">FastAPI Chat Router: POST /api/chat</text>
+    <text x="48" y="42" fill="#e0f2fe" font-size="10.5">Payload: {patient_id: "P004", query: "...", history: [...]}</text>
+  </g>
+
+  <!-- Flow 2 -> 3 -->
+  <path d="M 640 259 L 640 285" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrMain)" />
+
+  <!-- STEP 3: QUERY ENTITY EXTRACTION (MEDGEMMA) -->
+  <g transform="translate(385, 287)">
+    <rect x="0" y="0" width="510" height="68" rx="8" fill="url(#nerNodeGrad)" stroke="#a855f7" stroke-width="1.2" filter="url(#shadow)"/>
+    <circle cx="24" cy="34" r="12" fill="#4c1d95" stroke="#c084fc" stroke-width="1"/>
+    <text x="24" y="38" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">3</text>
+    <text x="48" y="26" fill="#ffffff" font-size="13" font-weight="700">Clinical Entity Extraction &amp; Synonym Normalization</text>
+    <text x="48" y="44" fill="#e9d5ff" font-size="10.5">• MedGemma extracts terms: <tspan fill="#f5d0fe" font-weight="600">drugs: ["nitroglycerin", "viagra"]</tspan></text>
+    <text x="48" y="60" fill="#e9d5ff" font-size="10.5">• <tspan fill="#a5f3fc" font-weight="600">CLINICAL_SYNONYMS</tspan> maps: <tspan fill="#fef08a" font-weight="600">"viagra" ➔ "sildenafil"</tspan> (generic ontology)</text>
+  </g>
+
+  <!-- Flow 3 -> 4 -->
+  <path d="M 640 355 L 640 380" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrMain)" />
+
+  <!-- STEP 4: CONTEXT FUSION & KNOWLEDGE RETRIEVAL HUB -->
+  <g transform="translate(365, 382)">
+    <rect x="0" y="0" width="550" height="95" rx="10" fill="url(#fusionNodeGrad)" stroke="#14b8a6" stroke-width="1.4" filter="url(#shadow)"/>
+    <circle cx="28" cy="35" r="14" fill="#134e4a" stroke="#5eead4" stroke-width="1"/>
+    <text x="28" y="40" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">4</text>
+    <text x="56" y="28" fill="#ffffff" font-size="14" font-weight="800">Context Fusion &amp; GraphRAG Hub (retriever.py)</text>
+    
+    <text x="56" y="48" fill="#ccfbf1" font-size="11">• Merges Patient Subgraph (Angina, Nitroglycerin) with Query Entities (Sildenafil)</text>
+    <text x="56" y="66" fill="#ccfbf1" font-size="11">• Discovers Direct Graph Triple: <tspan fill="#fca5a5" font-weight="700">Nitroglycerin --[synergistic interaction]--> Sildenafil</tspan></text>
+    <text x="56" y="84" fill="#ccfbf1" font-size="11">• Fetches Top-3 FAISS Gold-Standard Guidelines Chunks</text>
+  </g>
+
+  <!-- Lateral Convergence Lines into Step 4 -->
+  <path d="M 325 410 L 363 410" fill="none" stroke="#818cf8" stroke-width="2.5" stroke-dasharray="4,3" marker-end="url(#arrLateralL)" />
+  <text x="344" y="402" fill="#a5b4fc" font-size="9" font-weight="700" text-anchor="middle">Vitals/Meds</text>
+
+  <path d="M 955 410 L 917 410" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="4,3" marker-end="url(#arrLateralR)" />
+  <text x="936" y="402" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Triples+Texts</text>
+
+  <!-- Flow 4 -> 5 -->
+  <path d="M 640 477 L 640 504" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrMain)" />
+
+  <!-- STEP 5: THE DETERMINISTIC SAFETY INTERLOCK GATE -->
+  <g transform="translate(345, 506)">
+    <rect x="0" y="0" width="590" height="95" rx="10" fill="url(#interlockNodeGrad)" stroke="#f87171" stroke-width="1.8" filter="url(#shadow)"/>
+    <circle cx="30" cy="35" r="14" fill="#450a0a" stroke="#fca5a5" stroke-width="1.2" filter="url(#glowRed)"/>
+    <text x="30" y="40" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">5</text>
+    <text x="58" y="28" fill="#ffffff" font-size="14" font-weight="800">DETERMINISTIC SAFETY INTERLOCK GATE (Zero LLM Stochastics)</text>
+    
+    <rect x="58" y="38" width="515" height="46" rx="4" fill="#1c0404" stroke="#dc2626" stroke-width="0.8"/>
+    <text x="70" y="55" fill="#fecaca" font-size="11" font-weight="700">🚨 LETHAL INTERACTION DETECTED: Nitrates + PDE5 Inhibitor</text>
+    <text x="70" y="72" fill="#fca5a5" font-size="10.5">Python hard-locks verdict: <tspan fill="#ffffff" font-weight="800">[CONTRAINDICATED]</tspan> · Overrides all probabilistic bias</text>
+  </g>
+
+  <!-- Flow 5 -> 6 -->
+  <path d="M 640 601 L 640 627" fill="none" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrRed)" />
+
+  <!-- STEP 6: LOCAL LLM REASONING (GEMMA 4 ON METAL GPU) -->
+  <g transform="translate(365, 629)">
+    <rect x="0" y="0" width="550" height="98" rx="10" fill="url(#llmNodeGrad)" stroke="#c084fc" stroke-width="1.4" filter="url(#shadow)"/>
+    <circle cx="28" cy="35" r="14" fill="#3b0764" stroke="#d8b4fe" stroke-width="1"/>
+    <text x="28" y="40" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">6</text>
+    <text x="56" y="28" fill="#ffffff" font-size="14" font-weight="800">Local LLM Reasoning Engine (Gemma 4 E4B Metal GPU)</text>
+    
+    <text x="56" y="48" fill="#f3e8ff" font-size="11">• Ingests prompt: Patient data + PrimeKG triples + Locked [CONTRAINDICATED] verdict</text>
+    <text x="56" y="66" fill="#f3e8ff" font-size="11">• Generates structured CoT: <tspan fill="#e9d5ff" font-weight="600">1. Verdict ➔ 2. Mechanism ➔ 3. Action/Alternative</tspan></text>
+    <text x="56" y="84" fill="#e9d5ff" font-size="10.5">• <tspan fill="#a7f3d0" font-weight="700">Stream Sanitizer Gate (chat.py)</tspan>: Strips any stray pleasantries ('Yes') in real-time</text>
+  </g>
+
+  <!-- Flow 6 -> 7 -->
+  <path d="M 640 727 L 640 754" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrMain)" />
+
+  <!-- STEP 7: QUERY DESTINATION (EXPLAINABLE STREAM TO CLINICIAN) -->
+  <g transform="translate(345, 756)">
+    <rect x="0" y="0" width="590" height="155" rx="10" fill="url(#destNodeGrad)" stroke="#4ade80" stroke-width="1.8" filter="url(#shadow)"/>
+    <circle cx="30" cy="35" r="14" fill="#064e3b" stroke="#86efac" stroke-width="1.2" filter="url(#glowGreen)"/>
+    <text x="30" y="40" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">7</text>
+    <text x="58" y="28" fill="#ffffff" font-size="14" font-weight="800">QUERY DESTINATION: STREAMED CLINICAL EXPLANATION</text>
+    <text x="495" y="26" fill="#bbf7d0" font-size="10" font-weight="700">Clinician UI</text>
+
+    <!-- UI Display Box Simulation -->
+    <rect x="58" y="38" width="515" height="104" rx="6" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+    
+    <rect x="68" y="46" width="230" height="20" rx="3" fill="#7f1d1d" stroke="#ef4444" stroke-width="0.8"/>
+    <text x="76" y="60" fill="#fecaca" font-size="10" font-weight="800">🚨 [CONTRAINDICATED] (Locked by Graph Gate)</text>
+    
+    <text x="68" y="80" fill="#ecfdf5" font-size="10.5" font-weight="600">Physiological Mechanism:</text>
+    <text x="68" y="94" fill="#a7f3d0" font-size="10">Sildenafil (PDE5i) potentiates Nitroglycerin vasodilation via cGMP accumulation,</text>
+    <text x="68" y="107" fill="#a7f3d0" font-size="10">causing profound, potentially fatal refractory hypotension in Angina Pectoris.</text>
+
+    <text x="68" y="125" fill="#86efac" font-size="10" font-weight="700">Action: <tspan font-weight="400" fill="#e2e8f0">Hold PDE5 inhibitor. Alternative anti-anginal vasodilators recommended.</tspan></text>
+    <text x="68" y="138" fill="#6ee7b7" font-size="9" font-style="italic">Expandable Drawer: 4 PrimeKG Triples + NIH/AHA Sepsis &amp; Cardiac Guideline Citations</text>
+  </g>
+
+  <!-- ==================== SUMMARY LEGEND FOOTER ==================== -->
+  <g transform="translate(50, 935)">
+    <rect x="0" y="0" width="1180" height="50" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    
+    <circle cx="30" cy="25" r="5" fill="#38bdf8"/>
+    <text x="42" y="29" fill="#94a3b8" font-size="11">Primary Query Flow</text>
+
+    <circle cx="180" cy="25" r="5" fill="#818cf8"/>
+    <text x="192" y="29" fill="#94a3b8" font-size="11">Lateral Telemetry Feed</text>
+
+    <circle cx="355" cy="25" r="5" fill="#34d399"/>
+    <text x="367" y="29" fill="#94a3b8" font-size="11">Lateral Knowledge Base Feed</text>
+
+    <circle cx="560" cy="25" r="5" fill="#f87171"/>
+    <text x="572" y="29" fill="#94a3b8" font-size="11">Deterministic Safety Interlock Gate</text>
+
+    <circle cx="800" cy="25" r="5" fill="#4ade80"/>
+    <text x="812" y="29" fill="#94a3b8" font-size="11">Word-by-Word Stream to Doctor</text>
+
+    <text x="1150" y="29" fill="#64748b" font-size="11" text-anchor="end">OVGU Magdeburg · Course 05 (SDME)</text>
+  </g>
+</svg>

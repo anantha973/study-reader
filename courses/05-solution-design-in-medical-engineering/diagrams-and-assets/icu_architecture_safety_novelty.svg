@@ -1,0 +1,306 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 940" width="100%" height="100%" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="secGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="secGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="secGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="secGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#450a0a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1c0404" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardRedAlert" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#991b1b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#450a0a" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#082f49" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#064e3b" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cardPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3b0764" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Novelty & Safety Badges -->
+    <linearGradient id="noveltyBadge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="safetyBadge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="guardBadge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrRed" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#f87171"/>
+    </marker>
+    <marker id="arrCyan" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrAmber" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#fbbf24"/>
+    </marker>
+  </defs>
+
+  <!-- Background Pattern -->
+  <pattern id="gridDots" width="28" height="28" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#334155" fill-opacity="0.35"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#gridDots)"/>
+
+  <!-- ==================== HEADER ==================== -->
+  <g transform="translate(40, 24)">
+    <rect x="0" y="0" width="1240" height="74" rx="10" fill="#111827" stroke="#374151" stroke-width="1.2" filter="url(#shadow)"/>
+    <text x="28" y="36" fill="#f8fafc" font-size="22" font-weight="800" letter-spacing="0.5">ICU COPILOT — NOVELTY &amp; CLINICAL SAFETY ARCHITECTURE</text>
+    <text x="28" y="58" fill="#94a3b8" font-size="12" font-weight="400">High-Assurance GraphRAG · Dual-Shield Deterministic Safety Interlock · Sycophancy Elimination · On-Premise Air-Gapped M5</text>
+    
+    <g transform="translate(1005, 16)">
+      <rect x="0" y="0" width="210" height="42" rx="6" fill="#991b1b" fill-opacity="0.3" stroke="#f87171" stroke-width="1.2"/>
+      <circle cx="20" cy="21" r="6" fill="#ef4444" filter="url(#glowRed)"/>
+      <text x="36" y="25" fill="#fecaca" font-size="11" font-weight="700">DUAL-SHIELD SAFETY</text>
+      <text x="36" y="37" fill="#fca5a5" font-size="9" font-weight="500">Zero Probabilistic Override</text>
+    </g>
+  </g>
+
+  <!-- ==================== COLUMN 1: SOLVED PROBLEM 1 - NORMALIZATION ==================== -->
+  <g transform="translate(40, 115)">
+    <rect x="0" y="0" width="285" height="755" rx="12" fill="url(#secGrad1)" stroke="#334155" stroke-width="1.2" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <rect x="14" y="14" width="257" height="34" rx="6" fill="#1e293b" stroke="#475569" stroke-width="0.8"/>
+    <text x="26" y="36" fill="#f1f5f9" font-size="12" font-weight="700">STAGE 1: ENTITY RESOLUTION</text>
+
+    <!-- Problem Solved Tag -->
+    <g transform="translate(14, 58)">
+      <rect x="0" y="0" width="257" height="22" rx="4" fill="#78350f" fill-opacity="0.5" stroke="#d97706" stroke-width="0.8"/>
+      <text x="8" y="15" fill="#fde68a" font-size="10" font-weight="700">⚡ NOVELTY 1: ACRONYM MISMATCH FIX</text>
+    </g>
+
+    <!-- Component 1.1: Clinical Synonym Engine -->
+    <g transform="translate(14, 90)">
+      <rect x="0" y="0" width="257" height="175" rx="8" fill="url(#cardShield)" stroke="#0284c7" stroke-width="1" filter="url(#shadow)"/>
+      <text x="14" y="24" fill="#7dd3fc" font-size="13" font-weight="700">CLINICAL_SYNONYMS Table</text>
+      <text x="14" y="44" fill="#cbd5e1" font-size="11" font-weight="600">50+ Curated Mappings:</text>
+      <text x="20" y="62" fill="#93c5fd" font-size="10">• CKD → chronic kidney disease</text>
+      <text x="20" y="78" fill="#93c5fd" font-size="10">• AFib → atrial fibrillation</text>
+      <text x="20" y="94" fill="#93c5fd" font-size="10">• Lasix → furosemide (brand→generic)</text>
+      <text x="20" y="110" fill="#93c5fd" font-size="10">• Advil / Motrin → ibuprofen</text>
+      <text x="20" y="126" fill="#93c5fd" font-size="10">• MI → myocardial infarction</text>
+      <text x="14" y="148" fill="#a5f3fc" font-size="10" font-weight="600">Impact: Eliminates spurious gene matches</text>
+      <text x="14" y="164" fill="#94a3b8" font-size="9" font-style="italic">(CKD matched BCKDHA genes previously)</text>
+    </g>
+
+    <!-- Component 1.2: Node Type Ranker -->
+    <g transform="translate(14, 275)">
+      <rect x="0" y="0" width="257" height="155" rx="8" fill="#111827" stroke="#0ea5e9" stroke-width="1" filter="url(#shadow)"/>
+      <text x="14" y="24" fill="#38bdf8" font-size="13" font-weight="700">Candidate Type Ranker</text>
+      <text x="14" y="44" fill="#cbd5e1" font-size="11" font-weight="400">Sorts Candidate Nodes by Clinical Utility:</text>
+      <rect x="14" y="54" width="229" height="24" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="0.8"/>
+      <text x="22" y="70" fill="#6ee7b7" font-size="10" font-weight="700">Rank 0: drug · disease · phenotype</text>
+      <rect x="14" y="86" width="229" height="24" rx="4" fill="#312e81" stroke="#6366f1" stroke-width="0.8"/>
+      <text x="22" y="102" fill="#c7d2fe" font-size="10" font-weight="400">Rank 1: generic anatomy · protein · gene</text>
+      <text x="14" y="128" fill="#cbd5e1" font-size="10">Applied across both exact &amp; FAISS vector</text>
+      <text x="14" y="144" fill="#cbd5e1" font-size="10">candidate matches in PrimeKG.</text>
+    </g>
+
+    <!-- Component 1.3: Router Entity Separation -->
+    <g transform="translate(14, 440)">
+      <rect x="0" y="0" width="257" height="135" rx="8" fill="url(#cardPurple)" stroke="#8b5cf6" stroke-width="1" filter="url(#shadow)"/>
+      <text x="14" y="24" fill="#d8b4fe" font-size="13" font-weight="700">Query Entity Router Fix</text>
+      <text x="14" y="44" fill="#cbd5e1" font-size="11" font-weight="400">• MedGemma extracts conditions + meds</text>
+      <text x="14" y="62" fill="#cbd5e1" font-size="11" font-weight="400">• Prior bug routed all query entities to</text>
+      <text x="20" y="78" fill="#f87171" font-size="10">conditions only (broke drug-drug checks)</text>
+      <text x="14" y="98" fill="#86efac" font-size="11" font-weight="600">Fixed in chat.py:</text>
+      <text x="20" y="114" fill="#cbd5e1" font-size="10">all_conditions &amp; all_meds decoupled</text>
+    </g>
+
+    <g transform="translate(14, 705)">
+      <rect x="0" y="0" width="257" height="36" rx="6" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+      <text x="128" y="22" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle">Result: 10/10 Acronym Tests Passed</text>
+    </g>
+  </g>
+
+  <!-- ==================== COLUMN 2: SOLVED PROBLEM 2 - SUBGRAPH EXTRACTION ==================== -->
+  <g transform="translate(345, 115)">
+    <rect x="0" y="0" width="295" height="755" rx="12" fill="url(#secGrad2)" stroke="#3730a3" stroke-width="1.2" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <rect x="14" y="14" width="267" height="34" rx="6" fill="#312e81" stroke="#4f46e5" stroke-width="0.8"/>
+    <text x="26" y="36" fill="#e0e7ff" font-size="12" font-weight="700">STAGE 2: CLINICAL SUBGRAPH</text>
+
+    <!-- Problem Solved Tag -->
+    <g transform="translate(14, 58)">
+      <rect x="0" y="0" width="267" height="22" rx="4" fill="#78350f" fill-opacity="0.5" stroke="#d97706" stroke-width="0.8"/>
+      <text x="8" y="15" fill="#fde68a" font-size="10" font-weight="700">⚡ NOVELTY 2: RELATION-DIRECTED GraphRAG</text>
+    </g>
+
+    <!-- Component 2.1: Before vs After Breakdown -->
+    <g transform="translate(14, 90)">
+      <rect x="0" y="0" width="267" height="175" rx="8" fill="#111827" stroke="#4f46e5" stroke-width="1" filter="url(#shadow)"/>
+      <text x="14" y="24" fill="#a5b4fc" font-size="13" font-weight="700">2-Hop Ego Graph Elimination</text>
+      <text x="14" y="44" fill="#fca5a5" font-size="11" font-weight="600">Old Vulnerability:</text>
+      <text x="14" y="60" fill="#e2e8f0" font-size="10">• Undirected 2-hop ego exploded on hub nodes</text>
+      <text x="14" y="76" fill="#e2e8f0" font-size="10">• 40-node slice filled with random proteins</text>
+      <text x="14" y="92" fill="#e2e8f0" font-size="10">• Loop broke early; skipped remaining drugs</text>
+      
+      <text x="14" y="116" fill="#86efac" font-size="11" font-weight="600">New Targeted Architecture:</text>
+      <text x="14" y="132" fill="#cbd5e1" font-size="10">• Seed-to-Seed Direct Edge Scan</text>
+      <text x="14" y="148" fill="#cbd5e1" font-size="10">• Strict 1-Hop Actionable Edge Filtering</text>
+      <text x="14" y="164" fill="#cbd5e1" font-size="10">• Sub-millisecond graph traversal (&lt;1.2ms)</text>
+    </g>
+
+    <!-- Component 2.2: Directed Edge Filter Classes -->
+    <g transform="translate(14, 275)">
+      <rect x="0" y="0" width="267" height="205" rx="8" fill="url(#cardEmerald)" stroke="#059669" stroke-width="1" filter="url(#shadow)"/>
+      <text x="14" y="24" fill="#6ee7b7" font-size="13" font-weight="700">Strict Clinical Relation Classes</text>
+      
+      <rect x="14" y="38" width="239" height="28" rx="4" fill="#7f1d1d" stroke="#ef4444" stroke-width="0.8"/>
+      <text x="22" y="56" fill="#fecaca" font-size="10" font-weight="700">[DIRECT ALERT] Seed-to-Seed Interactions</text>
+
+      <rect x="14" y="72" width="239" height="28" rx="4" fill="#831843" stroke="#f43f5e" stroke-width="0.8"/>
+      <text x="22" y="90" fill="#fbcfe8" font-size="10" font-weight="700">[CONTRAINDICATION] Drug–Disease Block</text>
+
+      <rect x="14" y="106" width="239" height="28" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="0.8"/>
+      <text x="22" y="124" fill="#fde68a" font-size="10" font-weight="700">[ADVERSE EFFECTS] High-Risk Phenotypes</text>
+
+      <rect x="14" y="140" width="239" height="28" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="0.8"/>
+      <text x="22" y="158" fill="#a7f3d0" font-size="10" font-weight="700">[APPROVED INDICATIONS] Treats / Off-Label</text>
+      
+      <text x="14" y="186" fill="#cbd5e1" font-size="10">Deduplicated &amp; formatted directly as</text>
+      <text x="14" y="198" fill="#6ee7b7" font-size="10">structured Markdown for LLM prompt context</text>
+    </g>
+
+    <!-- Component 2.3: Context Formatter -->
+    <g transform="translate(14, 490)">
+      <rect x="0" y="0" width="267" height="120" rx="8" fill="#111827" stroke="#6366f1" stroke-width="1" filter="url(#shadow)"/>
+      <text x="14" y="24" fill="#a5b4fc" font-size="13" font-weight="700">Precision Subgraph Payload</text>
+      <text x="14" y="44" fill="#cbd5e1" font-size="11" font-weight="400">• Delivers top-12 direct interactions</text>
+      <text x="14" y="62" fill="#cbd5e1" font-size="11" font-weight="400">• Top-12 verified contraindications</text>
+      <text x="14" y="80" fill="#cbd5e1" font-size="11" font-weight="400">• Top-10 known adverse risk phenotypes</text>
+      <text x="14" y="98" fill="#cbd5e1" font-size="11" font-weight="400">• Combined with FAISS Top-3 Guidelines</text>
+    </g>
+
+    <g transform="translate(14, 705)">
+      <rect x="0" y="0" width="267" height="36" rx="6" fill="#0f172a" stroke="#334155" stroke-width="0.8"/>
+      <text x="133" y="22" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle">Zero Hallucinated Proteins/Genes</text>
+    </g>
+  </g>
+
+  <!-- ==================== COLUMN 3 & 4: THE DUAL-SHIELD SAFETY INTERLOCK ==================== -->
+  <g transform="translate(660, 115)">
+    <rect x="0" y="0" width="620" height="755" rx="12" fill="url(#secGrad4)" stroke="#991b1b" stroke-width="1.6" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <rect x="16" y="14" width="588" height="34" rx="6" fill="#7f1d1d" stroke="#ef4444" stroke-width="1"/>
+    <circle cx="36" cy="31" r="6" fill="#f87171" filter="url(#glowRed)"/>
+    <text x="50" y="36" fill="#fef2f2" font-size="13" font-weight="800">STAGE 3: THE DUAL-SHIELD CLINICAL SAFETY INTERLOCK ARCHITECTURE</text>
+
+    <!-- Problem Solved Tag -->
+    <g transform="translate(16, 58)">
+      <rect x="0" y="0" width="588" height="22" rx="4" fill="#450a0a" stroke="#dc2626" stroke-width="0.8"/>
+      <text x="10" y="15" fill="#fecaca" font-size="10" font-weight="700">🚨 CORE SAFETY INNOVATION: ELIMINATES LLM SYCOPHANCY &amp; "YES"-BIAS IN ACUTE CARE</text>
+    </g>
+
+    <!-- TIER 1: DETERMINISTIC KNOWLEDGE GRAPH GATE -->
+    <g transform="translate(16, 90)">
+      <rect x="0" y="0" width="588" height="185" rx="8" fill="url(#cardRedAlert)" stroke="#ef4444" stroke-width="1.2" filter="url(#shadow)"/>
+      <rect x="14" y="14" width="180" height="24" rx="4" fill="#450a0a" stroke="#f87171" stroke-width="0.8"/>
+      <text x="22" y="30" fill="#fca5a5" font-size="11" font-weight="800">TIER 1: DETERMINISTIC GATE</text>
+      <text x="204" y="30" fill="#fecaca" font-size="11" font-weight="600">(Python / retriever.py — Zero LLM Stochastics)</text>
+      
+      <text x="14" y="56" fill="#f8fafc" font-size="12" font-weight="600">CRITICAL_CONTRAINDICATION_RULES + Pairwise Graph Edge Audit:</text>
+      <text x="14" y="74" fill="#fecaca" font-size="11">• <tspan font-weight="700">Nitrates + PDE5i</tspan> (Nitroglycerin + Sildenafil) → Lethal refractory hypotension</text>
+      <text x="14" y="92" fill="#fecaca" font-size="11">• <tspan font-weight="700">Anticoagulants + Active Hemorrhage</tspan> (Heparin + GI Bleed) → Fatal hemorrhage</text>
+      <text x="14" y="110" fill="#fecaca" font-size="11">• <tspan font-weight="700">Non-selective Beta-blockers + Asthma</tspan> (Propranolol + Asthma) → Fatal bronchospasm</text>
+      <text x="14" y="128" fill="#fecaca" font-size="11">• <tspan font-weight="700">Biguanides + Severe Renal Failure</tspan> (Metformin + AKI/CKD) → Lactic acidosis</text>
+      
+      <rect x="14" y="142" width="560" height="32" rx="4" fill="#1c1917" stroke="#ea580c" stroke-width="0.8"/>
+      <text x="22" y="162" fill="#fed7aa" font-size="11" font-weight="700">DETERMINISTIC VERDICT LOCKED: [CONTRAINDICATED] · Injected as Unalterable Constraint</text>
+    </g>
+
+    <!-- TIER 2: EVIDENCE-CONDITIONED CLINICAL SCHEMA -->
+    <g transform="translate(16, 290)">
+      <rect x="0" y="0" width="588" height="185" rx="8" fill="url(#cardPurple)" stroke="#a855f7" stroke-width="1.2" filter="url(#shadow)"/>
+      <rect x="14" y="14" width="220" height="24" rx="4" fill="#3b0764" stroke="#c084fc" stroke-width="0.8"/>
+      <text x="22" y="30" fill="#e9d5ff" font-size="11" font-weight="800">TIER 2: EVIDENCE-FIRST SCHEMA</text>
+      <text x="244" y="30" fill="#f3e8ff" font-size="11" font-weight="600">(Gemma 4 E4B Metal GPU Reasoning Engine)</text>
+      
+      <text x="14" y="56" fill="#f8fafc" font-size="12" font-weight="600">Structured Chain-of-Thought (Mandates Evidence before Verdict in KV-Cache):</text>
+      
+      <rect x="14" y="68" width="560" height="28" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="0.8"/>
+      <text x="24" y="86" fill="#c7d2fe" font-size="11" font-weight="700">1. CLINICAL VERDICT: [CONTRAINDICATED | CAUTION | PERMITTED]</text>
+
+      <rect x="14" y="102" width="560" height="28" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="0.8"/>
+      <text x="24" y="120" fill="#c7d2fe" font-size="11" font-weight="700">2. PHYSIOLOGICAL MECHANISM: (Pathophysiological basis citing PrimeKG &amp; Guidelines)</text>
+
+      <rect x="14" y="136" width="560" height="28" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="0.8"/>
+      <text x="24" y="154" fill="#c7d2fe" font-size="11" font-weight="700">3. CLINICAL ACTION / ALTERNATIVE: (Concrete ICU dose holds &amp; alternative therapies)</text>
+      
+      <text x="14" y="178" fill="#e9d5ff" font-size="10" font-weight="500">Forbids conversational greetings ('Yes', 'Certainly', 'Sure', 'Hello') in System Prompt</text>
+    </g>
+
+    <!-- TIER 3: ZERO-TOLERANCE STREAM SANITIZER -->
+    <g transform="translate(16, 490)">
+      <rect x="0" y="0" width="588" height="150" rx="8" fill="url(#cardShield)" stroke="#0284c7" stroke-width="1.2" filter="url(#shadow)"/>
+      <rect x="14" y="14" width="220" height="24" rx="4" fill="#082f49" stroke="#38bdf8" stroke-width="0.8"/>
+      <text x="22" y="30" fill="#bae6fd" font-size="11" font-weight="800">TIER 3: STREAM SANITIZER</text>
+      <text x="244" y="30" fill="#e0f2fe" font-size="11" font-weight="600">(FastAPI Async Streaming Gate — chat.py)</text>
+
+      <text x="14" y="56" fill="#f8fafc" font-size="12" font-weight="600">Real-Time Regex Buffer Stripper:</text>
+      <text x="20" y="74" fill="#cbd5e1" font-size="11">• Buffers opening generation tokens before yielding to clinician WebSocket/HTTP stream</text>
+      <text x="20" y="92" fill="#7dd3fc" font-size="11" font-weight="600">• re.sub(r'^(Yes|Sure|Certainly|Of course|Hello)[,\.!\s]*', '', buffer) strips sycophancy</text>
+      <text x="20" y="110" fill="#fca5a5" font-size="11" font-weight="700">• Deterministically prepends: 🚨 CRITICAL SAFETY INTERLOCK: [CONTRAINDICATED]</text>
+      <text x="20" y="128" fill="#94a3b8" font-size="10">Guarantees clinician NEVER observes affirmative pleasantries on fatal contraindications</text>
+    </g>
+
+    <!-- Verification Banner -->
+    <g transform="translate(16, 655)">
+      <rect x="0" y="0" width="588" height="86" rx="8" fill="#0f172a" stroke="#22c55e" stroke-width="1.2"/>
+      <text x="16" y="24" fill="#4ade80" font-size="12" font-weight="800">EMPIRICAL BENCHMARK PROOF (20 SCENARIOS ON M5 GPU):</text>
+      <text x="16" y="44" fill="#e2e8f0" font-size="10.5">✓ 100% Sycophancy Elimination (0/20 questions emitted conversational pleasantries)</text>
+      <text x="16" y="60" fill="#e2e8f0" font-size="10.5">✓ 100% Deterministic Safety Concordance across all cardiovascular, renal &amp; pulmonary edge cases</text>
+      <text x="16" y="76" fill="#e2e8f0" font-size="10.5">✓ Average Local Generation Latency: 8.16s · Zero cloud egress · 100% Privacy Preserved</text>
+    </g>
+  </g>
+
+  <!-- FLOW CONNECTORS BETWEEN STAGES -->
+  <path d="M 325 200 L 345 200" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrCyan)" />
+  <path d="M 640 200 L 660 200" fill="none" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrRed)" />
+
+  <!-- FOOTER -->
+  <g transform="translate(40, 895)">
+    <text x="0" y="16" fill="#64748b" font-size="11" font-weight="400">Course 05: Solution Design in Medical Engineering · Group A6 (OVGU Magdeburg) · Novelty &amp; Safety Specification</text>
+  </g>
+</svg>

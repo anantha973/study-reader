@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" style="background:#FFFFFF; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Crisp subtle shadow for cards -->
+    <filter id="cardShadow" x="-3%" y="-3%" width="106%" height="109%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.04"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#6366F1"/>
+    </marker>
+    <marker id="arrow-teal-down" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#0D9488"/>
+    </marker>
+    <marker id="arrow-red-left" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-amber-left" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#D97706"/>
+    </marker>
+  </defs>
+
+  <!-- Clean Canvas Background -->
+  <rect width="800" height="420" fill="#FFFFFF"/>
+
+  <!-- ==================== HEADER BAR ==================== -->
+  <text x="20" y="23" font-size="13.5" font-weight="700" fill="#0F172A" letter-spacing="-0.2px">ICU Copilot — Clinical Query Flow &amp; Deterministic Safety Interlock</text>
+  <text x="20" y="38" font-size="9" font-weight="400" fill="#64748B">Closed-Loop Edge Architecture: Bedside Ingestion ➔ Intent Triage ➔ Parallel GraphRAG ➔ Safety Interlock ➔ MedGemma 4B Synthesis</text>
+  <line x1="20" y1="46" x2="780" y2="46" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- ==================== 3 COLUMN LAYER PANELS ==================== -->
+  <!-- Layer 1 Panel: Bedside Terminal -->
+  <rect x="16" y="52" width="250" height="348" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="26" y="65" font-size="8.5" font-weight="700" fill="#475569" letter-spacing="0.6px">LAYER I: BEDSIDE TERMINAL INTERFACE</text>
+
+  <!-- Layer 2 Panel: Orchestration & AI -->
+  <rect x="275" y="52" width="250" height="348" rx="8" fill="#FDFCFE" stroke="#E9D5FF" stroke-width="1"/>
+  <text x="285" y="65" font-size="8.5" font-weight="700" fill="#6B21A8" letter-spacing="0.6px">LAYER II: EDGE TRIAGE &amp; REASONING</text>
+
+  <!-- Layer 3 Panel: Knowledge & Safety -->
+  <rect x="534" y="52" width="250" height="348" rx="8" fill="#F8FCFB" stroke="#CCFBF1" stroke-width="1"/>
+  <text x="544" y="65" font-size="8.5" font-weight="700" fill="#0F766E" letter-spacing="0.6px">LAYER III: EVIDENCE &amp; SAFETY INTERLOCK</text>
+
+  <!-- ==================== STEP 01: CLINICIAN QUERY ==================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="73" width="234" height="142" rx="6" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.2"/>
+  </g>
+  <rect x="32" y="81" width="112" height="16" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.8"/>
+  <text x="88" y="89" dominant-baseline="central" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1D4ED8">01 | CLINICIAN QUERY</text>
+  <text x="32" y="109" font-size="10.5" font-weight="700" fill="#0F172A">Bedside Clinical Query</text>
+
+  <!-- Query Callout Box -->
+  <rect x="32" y="117" width="218" height="52" rx="5" fill="#F8FAFC" stroke="#DBEAFE" stroke-width="1"/>
+  <text x="40" y="131" font-size="9" font-weight="600" fill="#1E3A8A">“Can Bed 1A take Pantoprazole</text>
+  <text x="40" y="144" font-size="9" font-weight="600" fill="#1E3A8A"> with Metoprolol?”</text>
+  <circle cx="43" cy="158" r="2.5" fill="#3B82F6"/>
+  <text x="50" y="160.5" font-size="7.8" font-weight="500" fill="#64748B">Bed 1A • Septic Shock • Norepinephrine</text>
+
+  <!-- Step 01 Footer -->
+  <text x="32" y="186" font-size="8" font-weight="500" fill="#2563EB">Spoken voice / bedside terminal UI</text>
+  <text x="242" y="186" text-anchor="end" font-size="8" font-weight="500" fill="#94A3B8">&lt; 10ms</text>
+  <text x="32" y="198" font-size="7.5" fill="#64748B">Zero PII egress: local edge capture</text>
+
+  <!-- ==================== STEP 02: INTENT & TRIAGE ==================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="283" y="73" width="234" height="142" rx="6" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.2"/>
+  </g>
+  <rect x="291" y="81" width="112" height="16" rx="4" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="0.8"/>
+  <text x="347" y="89" dominant-baseline="central" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6D28D9">02 | INTENT &amp; TRIAGE</text>
+  <text x="291" y="109" font-size="10.5" font-weight="700" fill="#0F172A">Intent Classification &amp; Triage</text>
+
+  <!-- Path A: Casual Query -->
+  <rect x="291" y="117" width="218" height="23" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <circle cx="300" cy="128.5" r="2.5" fill="#94A3B8"/>
+  <text x="307" y="131.5" font-size="8" fill="#64748B">Casual / Admin ➔ Fast status bypass</text>
+
+  <!-- Path B: Clinical Query -->
+  <rect x="291" y="144" width="218" height="38" rx="4" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1"/>
+  <circle cx="300" cy="156" r="3" fill="#4F46E5"/>
+  <text x="307" y="158" font-size="8.5" font-weight="700" fill="#312E81">Clinical Pharmacology Query</text>
+  <text x="307" y="171" font-size="7.5" font-weight="500" fill="#4338CA">Routes to Safety Engine &amp; Parallel Retrieval</text>
+
+  <!-- Step 02 Footer -->
+  <text x="291" y="196" font-size="8" font-weight="500" fill="#6D28D9">TinyBERT / Regex Intent Router</text>
+  <text x="501" y="196" text-anchor="end" font-size="8" font-weight="500" fill="#94A3B8">&lt; 15ms</text>
+  <text x="291" y="206" font-size="7.5" fill="#64748B">Extracts entities: Pantoprazole, Metoprolol</text>
+
+  <!-- ==================== STEP 03: CONTEXT RETRIEVAL ==================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="542" y="73" width="234" height="142" rx="6" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.2"/>
+  </g>
+  <rect x="550" y="81" width="128" height="16" rx="4" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.8"/>
+  <text x="614" y="89" dominant-baseline="central" text-anchor="middle" font-size="8.5" font-weight="700" fill="#0F766E">03 | PARALLEL RETRIEVAL</text>
+  <text x="550" y="109" font-size="10.5" font-weight="700" fill="#0F172A">Parallel Context Retrieval</text>
+
+  <!-- Sub-Card 1: Patient Labs -->
+  <rect x="550" y="116" width="218" height="25" rx="3.5" fill="#F0FDFA" stroke="#A7F3D0" stroke-width="0.8"/>
+  <text x="556" y="126" font-size="7.8" font-weight="700" fill="#065F46">Patient Vitals &amp; Labs (EMR / FHIR):</text>
+  <text x="556" y="136" font-size="7.2" fill="#047857">eGFR 42 mL/min • BP 85/50 • HR 118 bpm</text>
+
+  <!-- Sub-Card 2: PrimeKG Drug Graph -->
+  <rect x="550" y="144" width="218" height="25" rx="3.5" fill="#F0FDF4" stroke="#86EFAC" stroke-width="0.8"/>
+  <text x="556" y="154" font-size="7.8" font-weight="700" fill="#14532D">PrimeKG Knowledge Graph:</text>
+  <text x="556" y="164" font-size="7.2" fill="#15803D">CYP2C19 &amp; DDI Subgraph (100K+ triples)</text>
+
+  <!-- Sub-Card 3: Clinical Guidelines -->
+  <rect x="550" y="172" width="218" height="25" rx="3.5" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.8"/>
+  <text x="556" y="182" font-size="7.8" font-weight="700" fill="#78350F">ICU Clinical Guidelines (FAISS):</text>
+  <text x="556" y="192" font-size="7.2" fill="#92400E">Surviving Sepsis 2023 &amp; PPI Protocols</text>
+
+  <!-- Step 03 Footer -->
+  <text x="550" y="206" font-size="8" font-weight="500" fill="#0F766E">Async multi-source fetch</text>
+  <text x="760" y="206" text-anchor="end" font-size="8" font-weight="500" fill="#94A3B8">&lt; 120ms</text>
+
+  <!-- ==================== CONNECTORS: TOP ROW ==================== -->
+  <!-- Connector 1 ➔ 2 -->
+  <text x="270" y="133" text-anchor="middle" font-size="6.8" font-weight="700" fill="#2563EB">Query</text>
+  <line x1="258" y1="139" x2="280" y2="139" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Connector 2 ➔ 3 -->
+  <text x="529.5" y="155" text-anchor="middle" font-size="6.8" font-weight="700" fill="#6366F1">Dispatch</text>
+  <line x1="517" y1="161" x2="539" y2="161" stroke="#6366F1" stroke-width="1.5" marker-end="url(#arrow-indigo)"/>
+
+  <!-- ==================== CONNECTOR: TOP TO BOTTOM (3 ➔ 4) ==================== -->
+  <line x1="659" y1="215" x2="659" y2="223" stroke="#0D9488" stroke-width="1.5"/>
+  <rect x="596" y="223" width="126" height="16" rx="8" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1"/>
+  <text x="659" y="231.5" dominant-baseline="central" text-anchor="middle" font-size="7.2" font-weight="700" fill="#0F766E">Extracted Graph &amp; Vitals</text>
+  <line x1="659" y1="239" x2="659" y2="244" stroke="#0D9488" stroke-width="1.5" marker-end="url(#arrow-teal-down)"/>
+
+  <!-- ==================== STEP 04: SAFETY INTERLOCK ==================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="542" y="247" width="234" height="142" rx="6" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1.4"/>
+  </g>
+  <rect x="550" y="255" width="128" height="16" rx="4" fill="#FEF2F2" stroke="#FECACA" stroke-width="0.8"/>
+  <text x="614" y="263" dominant-baseline="central" text-anchor="middle" font-size="8.5" font-weight="700" fill="#DC2626">04 | SAFETY INTERLOCK</text>
+  <text x="550" y="283" font-size="10.5" font-weight="700" fill="#991B1B">Deterministic Safety Interlock</text>
+
+  <!-- Interlock Detection Card -->
+  <rect x="550" y="291" width="218" height="54" rx="5" fill="#FEF2F2" stroke="#F87171" stroke-width="1"/>
+  <rect x="558" y="297" width="98" height="13" rx="3" fill="#DC2626"/>
+  <text x="607" y="304" dominant-baseline="central" text-anchor="middle" font-size="7" font-weight="800" fill="#FFFFFF">CONTRAINDICATED</text>
+  <text x="558" y="321" font-size="7.8" font-weight="700" fill="#991B1B">Direct conflict edge in PrimeKG:</text>
+  <text x="558" y="331" font-size="7.2" fill="#7F1D1D">• CYP2C19 inhibition increases Metoprolol level</text>
+  <text x="558" y="340" font-size="7.2" fill="#7F1D1D">• Severe risk of profound bradycardia &amp; shock</text>
+
+  <!-- Step 04 Footer -->
+  <text x="550" y="362" font-size="8" font-weight="700" fill="#DC2626">Deterministic Hard Stop</text>
+  <text x="760" y="362" text-anchor="end" font-size="8" font-weight="500" fill="#94A3B8">&lt; 5ms</text>
+  <text x="550" y="374" font-size="7.3" font-weight="500" fill="#B91C1C">Overrides LLM: zero hallucination tolerance</text>
+  <text x="550" y="384" font-size="7" fill="#64748B">Graph traversal executes before generation</text>
+
+  <!-- ==================== STEP 05: LOCAL LLM REASONING ==================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="283" y="247" width="234" height="142" rx="6" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1.2"/>
+  </g>
+  <rect x="291" y="255" width="134" height="16" rx="4" fill="#FFFBEB" stroke="#FDE68A" stroke-width="0.8"/>
+  <text x="358" y="263" dominant-baseline="central" text-anchor="middle" font-size="8.5" font-weight="700" fill="#B45309">05 | LOCAL LLM REASONING</text>
+  <text x="291" y="283" font-size="10.5" font-weight="700" fill="#0F172A">Local LLM Reasoning (MedGemma)</text>
+
+  <!-- LLM Reasoning Card -->
+  <rect x="291" y="291" width="218" height="54" rx="5" fill="#FFFDF5" stroke="#FDE68A" stroke-width="1"/>
+  <text x="299" y="304" font-size="8" font-weight="700" fill="#92400E">Pathophysiological Explanation:</text>
+  <text x="299" y="315" font-size="7.3" fill="#78350F">• Ingests safety interlock flag + graph triples</text>
+  <text x="299" y="325" font-size="7.3" fill="#78350F">• Explains CYP2C19 substrate competition</text>
+  <text x="299" y="337" font-size="7.5" font-weight="700" fill="#B45309">➔ Suggests safe alternative: IV Famotidine</text>
+
+  <!-- Step 05 Footer -->
+  <text x="291" y="362" font-size="8" font-weight="600" fill="#B45309">MedGemma 4B (Local GGUF)</text>
+  <text x="501" y="362" text-anchor="end" font-size="8" font-weight="500" fill="#94A3B8">~450ms</text>
+  <text x="291" y="374" font-size="7.3" fill="#78350F">100% on-premise • Zero cloud data egress</text>
+  <text x="291" y="384" font-size="7" fill="#64748B">Temperature: 0.1 • Grounded in graph evidence</text>
+
+  <!-- ==================== STEP 06: BEDSIDE RESPONSE ==================== -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="247" width="234" height="142" rx="6" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.2"/>
+  </g>
+  <rect x="32" y="255" width="124" height="16" rx="4" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="0.8"/>
+  <text x="94" y="263" dominant-baseline="central" text-anchor="middle" font-size="8.5" font-weight="700" fill="#047857">06 | BEDSIDE RESPONSE</text>
+  <text x="32" y="283" font-size="10.5" font-weight="700" fill="#0F172A">Streamed Verified Answer</text>
+
+  <!-- Streamed UI Card -->
+  <rect x="32" y="291" width="218" height="58" rx="5" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1"/>
+  <!-- Warning badge -->
+  <rect x="39" y="296" width="94" height="13" rx="3" fill="#FEE2E2" stroke="#EF4444" stroke-width="0.8"/>
+  <text x="86" y="303" dominant-baseline="central" text-anchor="middle" font-size="6.8" font-weight="800" fill="#991B1B">⚠️ CONTRAINDICATED</text>
+  <text x="39" y="318" font-size="7.8" font-weight="700" fill="#064E3B">Do not administer IV Pantoprazole.</text>
+  <text x="39" y="328" font-size="7.2" fill="#047857">Severe bradycardia risk with Metoprolol.</text>
+  <text x="39" y="337" font-size="7.2" fill="#047857">Alternative: IV Famotidine (eGFR adjusted).</text>
+  <rect x="39" y="341" width="204" height="10" rx="2" fill="#DCFCE7"/>
+  <text x="42" y="348.5" font-size="6.3" font-weight="700" fill="#15803D">Evidence: [PrimeKG:#8102] [SSC-2023 §4.1] [eGFR:42]</text>
+
+  <!-- Step 06 Footer -->
+  <text x="32" y="367" font-size="8" font-weight="600" fill="#059669">Streamed to bedside terminal</text>
+  <text x="242" y="367" text-anchor="end" font-size="8" font-weight="700" fill="#047857">Total: &lt; 650ms</text>
+  <text x="32" y="378" font-size="7.3" fill="#065F46">Live safety badge with verified citations</text>
+
+  <!-- ==================== CONNECTORS: BOTTOM ROW (RIGHT TO LEFT) ==================== -->
+  <!-- Connector 4 ➔ 5 (Points Left) -->
+  <text x="530" y="311" text-anchor="middle" font-size="6.8" font-weight="700" fill="#DC2626">Flag</text>
+  <line x1="542" y1="317" x2="520" y2="317" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrow-red-left)"/>
+
+  <!-- Connector 5 ➔ 6 (Points Left) -->
+  <text x="271.5" y="311" text-anchor="middle" font-size="6.8" font-weight="700" fill="#D97706">Stream</text>
+  <line x1="283" y1="317" x2="261" y2="317" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrow-amber-left)"/>
+
+  <!-- ==================== FOOTER CAPTION ==================== -->
+  <text x="20" y="413" font-size="8" font-weight="400" fill="#64748B" font-style="italic">* IEEE Standard Architecture: Dual-layer clinical safety. Direct PrimeKG graph conflicts deterministically flag contraindications before LLM generation.</text>
+</svg>
