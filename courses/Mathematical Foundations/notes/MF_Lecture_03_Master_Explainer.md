@@ -2,7 +2,7 @@
 > **OVGU Magdeburg — M.Sc. Medical Systems Engineering (WiSe 2026/27)**  
 > **Institute:** Institut für Algebra und Geometrie (IAG) | **Module:** Mathematical Foundations (6 CP, K90 Exam)  
 > **Primary Sources:** Handout Notes (`MF-Lecture 3-I.pdf`, `MF-Lecture 3-II.pdf`, `MF-Lecture 3-III.pdf`, `MF-Lecture 3-IV.pdf`), Extra Slides (`MF3angle.pdf`, `MF3problem.pdf`), and Course Handout Sections 1.3 & 2 (`Lecture_notes_for_Mathematical_Foundations_8_Oct_2026.pdf`).
-
+.====
 ---
 
 ## Executive Summary & Core Mental Models
