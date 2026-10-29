@@ -76,7 +76,7 @@
   --font-mono:    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
   --sidebar-w:    280px;
-  --content-max:  860px;
+  --content-max:  980px;
 
   --transition: 0.15s ease;
 }
@@ -145,32 +145,79 @@ html, body {
   #app:not(.sidebar-collapsed) #sidebar-backdrop {
     display: block;
   }
-  /* ── Mobile reading margins (768px and below) ─────────────────
-     Standard: Apple HIG / Material Design 3 = 16px side margin.
-     Tablet range (481–768px): 24px is comfortable.
-  ── */
+  /* ── Obsidian Mobile Layout & Margins (Obsidian standard: --file-margins: 16px) ── */
   #scroll-area {
-    padding: 28px 24px 60px;
+    padding: 12px 16px 40px;
   }
-}
-
-/* ── Phone-specific reading margins (≤480px) ───────────────────────
-   Standard: Apple Books / Kindle default = 12–16px side padding.
-   Using 14px: matches iBooks default, Material 3 compact breakpoint.
-   This gives comfortable readability without wasting phone width.
-── */
-@media (max-width: 480px) {
-  #scroll-area {
-    padding: 20px 14px 48px;
+  #content-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
-  /* Ensure font stays readable on very small screens */
-  html, body {
-    font-size: 14.5px;
+  #md-body {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.6;
   }
-  /* Slightly reduce topbar height on small phones */
+  #md-body h1 {
+    font-size: 24px;
+    margin: 16px 0 10px;
+    padding-bottom: 6px;
+  }
+  #md-body h2 {
+    font-size: 19px;
+    margin: 22px 0 8px;
+  }
+  #md-body h3 {
+    font-size: 16px;
+    margin: 16px 0 6px;
+  }
+  #md-body ul, #md-body ol {
+    margin: 0 0 12px 18px; /* Obsidian compact list indent */
+  }
+  #md-body li {
+    margin-bottom: 4px;
+  }
+  #md-body pre {
+    padding: 12px 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  #md-body blockquote {
+    padding: 8px 12px;
+    margin: 12px 0;
+  }
+  #md-body table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 13px;
+    margin: 12px 0;
+  }
+  #md-body th, #md-body td {
+    padding: 7px 10px;
+  }
   #topbar {
-    padding: 0 10px;
+    padding: 0 12px;
     height: 46px;
+  }
+  .tool-palette {
+    padding: 1px;
+    gap: 1px;
+  }
+  .palette-btn {
+    width: 25px;
+    height: 25px;
+  }
+  .palette-btn .swatch {
+    width: 12px;
+    height: 12px;
+  }
+  .topbar-action-btn {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -354,8 +401,8 @@ html, body {
 #scroll-area {
   flex: 1;
   overflow-y: auto;
-  /* Desktop: generous side padding for readability at wide widths */
-  padding: 40px 48px 80px;
+  /* Desktop reading padding */
+  padding: 32px 36px 64px;
   /* Prevent horizontal overflow from creating drag whitespace */
   overflow-x: hidden;
   overscroll-behavior-x: none;
