@@ -91,10 +91,20 @@ html, body {
   font-size: 15px;
   line-height: 1.6;
   overflow: hidden;
+  /* Prevent horizontal drag white-space on iOS/Android */
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 /* ── LAYOUT ────────────────────────────────────────────────────── */
-#app { display: flex; height: 100vh; position: relative; }
+#app {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  /* Prevent content wider than viewport from creating horizontal scroll */
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
 
 /* ── SIDEBAR ───────────────────────────────────────────────────── */
 #sidebar {
@@ -134,6 +144,33 @@ html, body {
   }
   #app:not(.sidebar-collapsed) #sidebar-backdrop {
     display: block;
+  }
+  /* ── Mobile reading margins (768px and below) ─────────────────
+     Standard: Apple HIG / Material Design 3 = 16px side margin.
+     Tablet range (481–768px): 24px is comfortable.
+  ── */
+  #scroll-area {
+    padding: 28px 24px 60px;
+  }
+}
+
+/* ── Phone-specific reading margins (≤480px) ───────────────────────
+   Standard: Apple Books / Kindle default = 12–16px side padding.
+   Using 14px: matches iBooks default, Material 3 compact breakpoint.
+   This gives comfortable readability without wasting phone width.
+── */
+@media (max-width: 480px) {
+  #scroll-area {
+    padding: 20px 14px 48px;
+  }
+  /* Ensure font stays readable on very small screens */
+  html, body {
+    font-size: 14.5px;
+  }
+  /* Slightly reduce topbar height on small phones */
+  #topbar {
+    padding: 0 10px;
+    height: 46px;
   }
 }
 
@@ -317,7 +354,11 @@ html, body {
 #scroll-area {
   flex: 1;
   overflow-y: auto;
+  /* Desktop: generous side padding for readability at wide widths */
   padding: 40px 48px 80px;
+  /* Prevent horizontal overflow from creating drag whitespace */
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 #scroll-area::-webkit-scrollbar { width: 5px; }
@@ -442,17 +483,21 @@ mark.study-hl-red {
   color: inherit;
 }
 
+/* Light mode highlight overrides:
+   In light mode, --amber is #b06000 (dark brown) and --green is #188038 (dark green).
+   These look muddy as mark backgrounds. Override with bright, true-color highlight tints
+   that match what you'd expect from a real highlighter on paper. */
 :root[data-theme='light'] mark.study-hl-yellow {
-  background: rgba(176, 96, 0, 0.15);
-  border-bottom: 2px solid var(--amber);
+  background: rgba(255, 213, 0, 0.35);
+  border-bottom: 2px solid #e6a800;
 }
 :root[data-theme='light'] mark.study-hl-green {
-  background: var(--green-soft);
-  border-bottom: 2px solid var(--green);
+  background: rgba(52, 199, 89, 0.25);
+  border-bottom: 2px solid #28a745;
 }
 :root[data-theme='light'] mark.study-hl-red {
-  background: var(--red-soft);
-  border-bottom: 2px solid var(--red);
+  background: rgba(255, 59, 48, 0.18);
+  border-bottom: 2px solid #e0312a;
 }
 
 /* ── HIGHLIGHTER PALETTE IN TOPBAR ─────────────────────────────── */
@@ -997,18 +1042,19 @@ mark.study-hl-red {
 /* ── NOTES PANEL (right-side collapsible) ───────────────────────── */
 #notes-panel {
   width: 280px;
-  min-width: 280px;
+  min-width: 0;
   background: var(--bg-sidebar);
   border-left: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   flex-shrink: 0;
-  transition: margin-right 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Use width transition instead of margin to avoid layout jolt */
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #app.notes-collapsed #notes-panel {
-  margin-right: -280px;
+  width: 0;
 }
 
 #notes-panel-header {
