@@ -246,6 +246,8 @@ html, body {
 /* ── MAIN CONTENT AREA ─────────────────────────────────────────── */
 #main {
   flex: 1;
+  min-width: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -835,75 +837,143 @@ mark.study-hl-red {
   font-family: var(--font-mono);
 }
 
-/* ── MARKDOWN TYPOGRAPHY ───────────────────────────────────────── */
+/* ── MARKDOWN TYPOGRAPHY (Obsidian-grade typography & text wrapping) ── */
 #md-body {
   font-size: 15.5px;
-  line-height: 1.8;
+  line-height: 1.65;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+#md-body h1,
+#md-body h2,
+#md-body h3,
+#md-body h4,
+#md-body h5,
+#md-body h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
   color: var(--text);
 }
 
 #md-body h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  color: var(--text);
-  margin: 0 0 8px;
-  padding-bottom: 10px;
+  line-height: 1.25;
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--border-light);
-  letter-spacing: -0.3px;
+  letter-spacing: -0.02em;
 }
+#md-body h1:first-child {
+  margin-top: 4px;
+}
+
 #md-body h2 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--text);
-  margin: 36px 0 12px;
-  padding-bottom: 6px;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+  padding-bottom: 5px;
   border-bottom: 1px solid var(--border);
+  letter-spacing: -0.01em;
 }
 #md-body h3 {
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: 600;
+  line-height: 1.35;
   color: var(--accent);
-  margin: 28px 0 8px;
+  margin: 24px 0 8px;
 }
 #md-body h4 {
   font-size: 14px;
   font-weight: 600;
+  line-height: 1.4;
   color: var(--text-muted);
-  margin: 20px 0 6px;
+  margin: 18px 0 6px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
+}
+#md-body h5 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-muted);
+  margin: 16px 0 6px;
+}
+#md-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-faint);
+  margin: 14px 0 4px;
 }
 
-#md-body p { margin: 0 0 14px; }
-#md-body p:last-child { margin-bottom: 0; }
+#md-body p {
+  margin: 0 0 14px;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+#md-body p:last-child {
+  margin-bottom: 0;
+}
 
 #md-body a {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid var(--accent-glow);
   transition: border-color var(--transition);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
-#md-body a:hover { border-color: var(--accent); }
+#md-body a:hover {
+  border-color: var(--accent);
+}
 
 #md-body ul, #md-body ol {
-  margin: 0 0 14px 24px;
+  margin: 0 0 14px 22px;
   padding: 0;
 }
-#md-body li { margin-bottom: 6px; }
-#md-body li::marker { color: var(--accent); }
+#md-body li {
+  margin-bottom: 5px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+#md-body li::marker {
+  color: var(--accent);
+}
 
-#md-body strong { color: var(--text); font-weight: 600; }
-#md-body em { color: var(--text); font-style: italic; }
+#md-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+#md-body em {
+  color: var(--text);
+  font-style: italic;
+}
 
 /* inline code */
 #md-body code {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 0.88em;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   color: var(--purple);
-  padding: 1px 5px;
+  padding: 2px 5px;
   border-radius: 4px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: break-spaces;
 }
 
 /* code blocks */
@@ -911,9 +981,10 @@ mark.study-hl-red {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius);
-  padding: 16px 20px;
+  padding: 14px 18px;
   overflow-x: auto;
   margin: 16px 0;
+  max-width: 100%;
 }
 #md-body pre code {
   background: none;
@@ -921,32 +992,39 @@ mark.study-hl-red {
   padding: 0;
   color: var(--text);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.55;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 /* tables */
 #md-body table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin: 16px 0;
-  font-size: 14px;
+  font-size: 13.5px;
+  overflow-x: auto;
 }
 #md-body th {
   background: var(--bg-card);
   color: var(--text);
   font-weight: 600;
-  padding: 10px 14px;
+  padding: 8px 12px;
   text-align: left;
   border: 1px solid var(--border-light);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 #md-body td {
-  padding: 9px 14px;
+  padding: 8px 12px;
   border: 1px solid var(--border);
   vertical-align: top;
   line-height: 1.5;
+  overflow-wrap: break-word;
 }
 #md-body tr:nth-child(even) td { background: var(--table-even); }
 #md-body tr:hover td { background: var(--bg-hover); }
@@ -958,10 +1036,17 @@ mark.study-hl-red {
   padding: 12px 16px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin: 16px 0;
-  color: var(--text-muted);
+  color: var(--text);
   font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
 }
-#md-body blockquote p { margin: 0; }
+#md-body blockquote p {
+  margin: 0 0 6px;
+}
+#md-body blockquote p:last-child {
+  margin-bottom: 0;
+}
 
 /* GitHub-style alerts */
 #md-body blockquote.alert-note {
@@ -993,20 +1078,29 @@ mark.study-hl-red {
 }
 
 /* images & SVG */
-#md-body img {
-  max-width: 100%;
+#md-body img,
+#md-body svg {
+  max-width: 100% !important;
+  height: auto !important;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   margin: 8px 0;
+  display: block;
 }
 
 /* KaTeX display math */
 #md-body .katex-display {
   margin: 20px 0;
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
   padding: 4px 0;
 }
-#md-body .katex { font-size: 1.05em; }
+#md-body .katex {
+  font-size: 1.05em;
+  max-width: 100%;
+}
 
 /* ── LOADING / ERROR ────────────────────────────────────────────── */
 #loading {
@@ -1119,10 +1213,22 @@ mark.study-hl-red {
   }
 
   /* ── 1. Scroll & Content Canvas ── */
+  #main {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
   #scroll-area {
     padding: 10px 14px 48px !important;
     overflow-x: hidden !important;
     overscroll-behavior-x: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    /* Prevent sideways drag/bounce revealing whitespace */
+    touch-action: pan-y pinch-zoom !important;
   }
 
   #content-wrap {
@@ -1130,48 +1236,105 @@ mark.study-hl-red {
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    min-width: 0 !important;
   }
 
   /* ── 2. Markdown Typography (Obsidian Standard) ── */
   #md-body {
     width: 100% !important;
     max-width: 100% !important;
-    font-size: 15.5px !important;
+    min-width: 0 !important;
+    font-size: 15px !important;
     line-height: 1.55 !important;
+    overflow-wrap: break-word !important;
     word-break: break-word !important;
   }
 
   #md-body h1 {
-    font-size: 22px !important;
+    font-size: 21px !important;
     font-weight: 700 !important;
     margin: 16px 0 10px !important;
     padding-bottom: 6px !important;
-    line-height: 1.3 !important;
+    line-height: 1.25 !important;
     letter-spacing: -0.2px !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
+  }
+
+  #md-body h1:first-child {
+    margin-top: 2px !important;
   }
 
   #md-body h2 {
-    font-size: 18.5px !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
-    margin: 22px 0 8px !important;
+    margin: 20px 0 8px !important;
     padding-bottom: 4px !important;
-    line-height: 1.35 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.15px !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
   }
 
   #md-body h3 {
-    font-size: 16px !important;
+    font-size: 15.5px !important;
     font-weight: 600 !important;
     margin: 16px 0 6px !important;
-    line-height: 1.4 !important;
+    line-height: 1.35 !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
   }
 
   #md-body h4 {
     font-size: 13.5px !important;
     margin: 14px 0 4px !important;
+    line-height: 1.35 !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  #md-body h5 {
+    font-size: 12.5px !important;
+    margin: 12px 0 4px !important;
+    line-height: 1.35 !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  #md-body h6 {
+    font-size: 12px !important;
+    margin: 10px 0 4px !important;
+    line-height: 1.35 !important;
+    text-wrap: balance !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
 
   #md-body p {
     margin: 0 0 12px !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    text-wrap: pretty !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
+  }
+
+  #md-body a {
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
   }
 
   /* ── 3. Obsidian Compact Lists ── */
@@ -1184,6 +1347,10 @@ mark.study-hl-red {
   #md-body li {
     margin-bottom: 4px !important;
     line-height: 1.55 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
   }
 
   /* ── 4. Callouts & Blockquotes (Crisp & Compact) ── */
@@ -1193,10 +1360,16 @@ mark.study-hl-red {
     border-radius: 6px !important;
     font-size: 14px !important;
     line-height: 1.55 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
 
   #md-body blockquote p {
     margin: 0 0 6px !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
   }
 
   #md-body blockquote p:last-child {
@@ -1204,20 +1377,43 @@ mark.study-hl-red {
   }
 
   /* ── 5. Code & Math ── */
+  #md-body code {
+    font-size: 0.88em !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    white-space: break-spaces !important;
+  }
+
   #md-body pre {
     padding: 10px 12px !important;
     margin: 12px 0 !important;
     border-radius: 8px !important;
-    font-size: 12.5px !important;
     max-width: 100% !important;
     overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #md-body pre code {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    white-space: pre !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  #md-body .katex {
+    font-size: 1.0em !important;
+    max-width: 100% !important;
+    vertical-align: middle !important;
   }
 
   #md-body .katex-display {
     margin: 12px 0 !important;
     padding: 4px 0 !important;
     overflow-x: auto !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
+    max-width: 100% !important;
   }
 
   /* ── 6. Mobile Tables (Full width scrollable) ── */
@@ -1229,12 +1425,22 @@ mark.study-hl-red {
     -webkit-overflow-scrolling: touch !important;
     margin: 12px 0 !important;
     font-size: 12.5px !important;
+    border-collapse: collapse !important;
   }
 
-  #md-body th, 
-  #md-body td {
-    padding: 6px 8px !important;
+  #md-body th {
+    padding: 6px 10px !important;
     white-space: nowrap !important;
+    font-size: 11.5px !important;
+  }
+
+  #md-body td {
+    padding: 6px 10px !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    min-width: 70px !important;
+    max-width: 260px !important;
   }
 
   /* ── 7. Topbar Mobile Optimization ── */
@@ -1242,6 +1448,10 @@ mark.study-hl-red {
     padding: 0 8px !important;
     height: 44px !important;
     gap: 4px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
+  }
   }
 
   #breadcrumb {
