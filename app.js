@@ -70,18 +70,52 @@ function restoreLastOpenedOrParam() {
   } catch(e) {}
 }
 
-async function loadIndex() {
-  // Hide sync button on static GitHub Pages (no server to sync from)
-  if (isStatic) {
-    const sb = document.getElementById("sync-btn");
-    if (sb) sb.style.display = "none";
+async function fetchIndexJson(restore = false) {
+  try {
+    const url = `index.json?_t=${Date.now()}`;
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const idx = await res.json();
+    if (idx && typeof idx === "object" && Object.keys(idx).length > 0) {
+      const isDifferent = JSON.stringify(idx) !== JSON.stringify(state.index);
+      if (isDifferent) {
+        state.index = idx;
+        window.__STUDY_INDEX__ = idx;
+        renderNav(idx);
+        if (restore) {
+          restoreLastOpenedOrParam();
+        }
+      }
+    }
+    return idx;
+  } catch(e) {
+    console.warn("Index fetch error:", e);
+    throw e;
   }
+}
+
+async function loadIndex() {
   if (typeof window.__STUDY_INDEX__ !== "undefined" && window.__STUDY_INDEX__) {
     state.index = window.__STUDY_INDEX__;
     renderNav(state.index);
     restoreLastOpenedOrParam();
+
+    // Background fetch in static mode to pick up recent notes without hard refresh
+    if (isStatic) {
+      fetchIndexJson(false).catch(() => {});
+    }
     return;
   }
+
+  if (isStatic) {
+    try {
+      await fetchIndexJson(true);
+    } catch(e) {
+      document.getElementById("nav-placeholder").textContent = "Failed to load courses.";
+    }
+    return;
+  }
+
   try {
     const idx = await apiGet("/api/index");
     state.index = idx;
@@ -484,7 +518,9 @@ async function syncNotes() {
   }
 
   try {
-    if (!isStatic) {
+    if (isStatic) {
+      await fetchIndexJson(false);
+    } else {
       const idx = await apiGet(`/api/index?_t=${Date.now()}`);
       state.index = idx;
       renderNav(idx);

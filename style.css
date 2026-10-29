@@ -485,6 +485,7 @@ mark.study-hl-red {
   padding: 2px;
   gap: 2px;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .palette-btn {
@@ -1451,7 +1452,6 @@ mark.study-hl-red {
     width: 100% !important;
     max-width: 100vw !important;
     overflow: hidden !important;
-  }
   }
 
   #breadcrumb {

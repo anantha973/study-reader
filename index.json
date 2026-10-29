@@ -1,0 +1,168 @@
+{
+  "Digital Information Processing": [
+    {
+      "name": "Overview",
+      "path": "courses/Digital Information Processing/README.md"
+    },
+    {
+      "name": "DIP Lessons 1 2 Exam Prep",
+      "path": "courses/Digital Information Processing/notes/DIP_Lessons_1_2_Exam_Prep.md"
+    }
+  ],
+  "Computed Tomography I - Methods on CT": [
+    {
+      "name": "Overview",
+      "path": "courses/Computed Tomography I - Methods on CT/README.md"
+    },
+    {
+      "name": "Lecture 01 And 02 Master Notes",
+      "path": "courses/Computed Tomography I - Methods on CT/notes/Lecture_01_and_02_Master_Notes.md"
+    },
+    {
+      "name": "Tutorial 01 Solutions",
+      "path": "courses/Computed Tomography I - Methods on CT/notes/Tutorial_01_Solutions.md"
+    },
+    {
+      "name": "Tutorial 01 Vocab And Math Guide",
+      "path": "courses/Computed Tomography I - Methods on CT/notes/Tutorial_01_Vocab_and_Math_Guide.md"
+    }
+  ],
+  "Clinical Aspects in Imaging and Radiation Therapy": [
+    {
+      "name": "Overview",
+      "path": "courses/Clinical Aspects in Imaging and Radiation Therapy/README.md"
+    }
+  ],
+  "Introduction to Programming Techniques in Engineering": [
+    {
+      "name": "Overview",
+      "path": "courses/Introduction to Programming Techniques in Engineering/README.md"
+    }
+  ],
+  "Mathematical Foundations": [
+    {
+      "name": "Overview",
+      "path": "courses/Mathematical Foundations/README.md"
+    },
+    {
+      "name": "MF Lecture 03 Master Explainer",
+      "path": "courses/Mathematical Foundations/notes/MF_Lecture_03_Master_Explainer.md"
+    }
+  ],
+  "05-solution-design-in-medical-engineering": [
+    {
+      "name": "ICU Copilot Code Submission Overview",
+      "path": "courses/05-solution-design-in-medical-engineering/ICU_Copilot_Code_Submission/README.md"
+    },
+    {
+      "name": "Overview",
+      "path": "courses/05-solution-design-in-medical-engineering/README.md"
+    },
+    {
+      "name": "Architectural Council Critical Analysis",
+      "path": "courses/05-solution-design-in-medical-engineering/architectural_council_critical_analysis.md"
+    },
+    {
+      "name": "Presentation Script 5min",
+      "path": "courses/05-solution-design-in-medical-engineering/presentation/presentation_script_5min.md"
+    }
+  ],
+  "German": [
+    {
+      "name": "Za1 Transkription",
+      "path": "courses/German/A1-Listening/Test-02_OESD-Zertifikat-A1_Modellsatz/ZA1_Transkription.md"
+    },
+    {
+      "name": "Action Plan",
+      "path": "courses/German/ACTION_PLAN.md"
+    },
+    {
+      "name": "Overview",
+      "path": "courses/German/README.md"
+    },
+    {
+      "name": "Academic And Professional Overview",
+      "path": "courses/German/academic-and-professional/README.md"
+    },
+    {
+      "name": "01 Cases And Articles Cheatsheet",
+      "path": "courses/German/created-material/cheat-sheets/01_cases_and_articles_cheatsheet.md"
+    },
+    {
+      "name": "02 Language Islands Daily Life",
+      "path": "courses/German/created-material/cheat-sheets/02_language_islands_daily_life.md"
+    },
+    {
+      "name": "01 Core Sentence Structures",
+      "path": "courses/German/created-material/grammar-notes/01_core_sentence_structures.md"
+    },
+    {
+      "name": "Ep105 Hoerverstehen Verbessern",
+      "path": "courses/German/created-material/transcripts/ep105_hoerverstehen_verbessern.md"
+    },
+    {
+      "name": "00 Master Index",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/00_MASTER_INDEX.md"
+    },
+    {
+      "name": "Unit 01 Personal Introduction",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_01_PERSONAL_INTRODUCTION.md"
+    },
+    {
+      "name": "Unit 02 Daily Life And Time",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_02_DAILY_LIFE_AND_TIME.md"
+    },
+    {
+      "name": "Unit 03 My Home In Magdeburg",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_03_MY_HOME_IN_MAGDEBURG.md"
+    },
+    {
+      "name": "Unit 04 Eating Drinking Cooking",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_04_EATING_DRINKING_COOKING.md"
+    },
+    {
+      "name": "Unit 05 Shopping And Money",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_05_SHOPPING_AND_MONEY.md"
+    },
+    {
+      "name": "Unit 06 Getting Around Magdeburg",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_06_GETTING_AROUND_MAGDEBURG.md"
+    },
+    {
+      "name": "Unit 07 Health And Body",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_07_HEALTH_AND_BODY.md"
+    },
+    {
+      "name": "Unit 08 Work And University",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_08_WORK_AND_UNIVERSITY.md"
+    },
+    {
+      "name": "Unit 09 Services And Admin",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_09_SERVICES_AND_ADMIN.md"
+    },
+    {
+      "name": "Unit 10 Communication And Digital",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_10_COMMUNICATION_AND_DIGITAL.md"
+    },
+    {
+      "name": "Unit 11 Leisure Hobbies Weather",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_11_LEISURE_HOBBIES_WEATHER.md"
+    },
+    {
+      "name": "Unit 12 Core Connectors And Grammar Words",
+      "path": "courses/German/created-material/vocabulary-lists/A1_THEMATIC_UNITS/UNIT_12_CORE_CONNECTORS_AND_GRAMMAR_WORDS.md"
+    },
+    {
+      "name": "A1 Wortliste",
+      "path": "courses/German/created-material/vocabulary-lists/official-goethe-wortlisten/A1_wortliste.md"
+    },
+    {
+      "name": "A2 Wortliste",
+      "path": "courses/German/created-material/vocabulary-lists/official-goethe-wortlisten/A2_Wortliste.md"
+    },
+    {
+      "name": "C Test Master Guide And Vocabulary",
+      "path": "courses/German/exam-prep/C-Test_Master_Guide_and_Vocabulary.md"
+    }
+  ]
+}
