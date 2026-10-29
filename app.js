@@ -1104,6 +1104,9 @@ function toggleNotesPanel(forceShow) {
       notesToggleBtn.classList.remove('active');
       notesToggleBtn.title = 'Open Notes Panel (Key: N)';
     }
+    if (notesArea && document.activeElement === notesArea) {
+      notesArea.blur();
+    }
   } else {
     appEl.classList.remove('notes-collapsed');
     localStorage.setItem('study_reader_notes_panel', 'expanded');
@@ -1111,7 +1114,13 @@ function toggleNotesPanel(forceShow) {
       notesToggleBtn.classList.add('active');
       notesToggleBtn.title = 'Collapse Notes Panel (Key: N)';
     }
-    if (notesArea) notesArea.focus();
+    // Wait until drawer width finishes expanding before focusing, and use preventScroll: true
+    // This completely prevents the browser viewport scroll jump / rubber-band bounce
+    if (notesArea) {
+      setTimeout(() => {
+        notesArea.focus({ preventScroll: true });
+      }, 300);
+    }
   }
 }
 

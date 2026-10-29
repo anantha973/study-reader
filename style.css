@@ -52,12 +52,12 @@
   --accent-glow:  rgba(58, 111, 247, 0.20);
   --accent-ink:   #2b58cc;
 
-  --green:        #188038;
-  --green-soft:   rgba(24, 128, 56, 0.12);
-  --amber:        #b06000;
-  --amber-soft:   rgba(176, 96, 0, 0.12);
-  --red:          #d93838;
-  --red-soft:     rgba(217, 56, 56, 0.12);
+  --green:        #16a34a;
+  --green-soft:   rgba(34, 197, 94, 0.18);
+  --amber:        #eab308;
+  --amber-soft:   rgba(234, 179, 8, 0.18);
+  --red:          #ef4444;
+  --red-soft:     rgba(239, 68, 68, 0.16);
   --purple:       #8430ce;
   --purple-soft:  rgba(132, 48, 206, 0.12);
 
@@ -467,37 +467,37 @@ mark.study-hl:hover {
   filter: brightness(1.15);
 }
 
+/* ── Dark mode highlight marks (default / explicit dark) ─────────── */
 mark.study-hl-yellow {
-  background: var(--amber-soft);
-  border-bottom: 2px solid var(--amber);
+  background: rgba(253, 214, 99, 0.22);
+  border-bottom: 2px solid #fdd663;
   color: inherit;
 }
 mark.study-hl-green {
-  background: var(--green-soft);
-  border-bottom: 2px solid var(--green);
+  background: rgba(91, 185, 116, 0.22);
+  border-bottom: 2px solid #5bb974;
   color: inherit;
 }
 mark.study-hl-red {
-  background: var(--red-soft);
-  border-bottom: 2px solid var(--red);
+  background: rgba(255, 107, 107, 0.22);
+  border-bottom: 2px solid #ff6b6b;
   color: inherit;
 }
 
-/* Light mode highlight overrides:
-   In light mode, --amber is #b06000 (dark brown) and --green is #188038 (dark green).
-   These look muddy as mark backgrounds. Override with bright, true-color highlight tints
-   that match what you'd expect from a real highlighter on paper. */
+/* ── Light mode highlight marks ───────────────────────────────────
+   True bright highlighter tints — like pen on white paper.
+   Yellow: warm gold, Green: clear spring green, Red: vivid red. */
 :root[data-theme='light'] mark.study-hl-yellow {
-  background: rgba(255, 213, 0, 0.35);
-  border-bottom: 2px solid #e6a800;
+  background: rgba(254, 240, 138, 0.85) !important;
+  border-bottom: 2px solid #eab308 !important;
 }
 :root[data-theme='light'] mark.study-hl-green {
-  background: rgba(52, 199, 89, 0.25);
-  border-bottom: 2px solid #28a745;
+  background: rgba(187, 247, 208, 0.80) !important;
+  border-bottom: 2px solid #22c55e !important;
 }
 :root[data-theme='light'] mark.study-hl-red {
-  background: rgba(255, 59, 48, 0.18);
-  border-bottom: 2px solid #e0312a;
+  background: rgba(254, 202, 202, 0.75) !important;
+  border-bottom: 2px solid #ef4444 !important;
 }
 
 /* ── HIGHLIGHTER PALETTE IN TOPBAR ─────────────────────────────── */
@@ -549,6 +549,22 @@ mark.study-hl-red {
 .swatch-green  { background: var(--green); box-shadow: 0 0 6px var(--green-soft); }
 .swatch-red    { background: var(--red);   box-shadow: 0 0 6px var(--red-soft);   }
 
+:root[data-theme='light'] .swatch-yellow,
+:root[data-theme='light'] .hl-btn-yellow {
+  background: #facc15;
+  box-shadow: 0 0 6px rgba(250, 204, 21, 0.45);
+}
+:root[data-theme='light'] .swatch-green,
+:root[data-theme='light'] .hl-btn-green {
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.45);
+}
+:root[data-theme='light'] .swatch-red,
+:root[data-theme='light'] .hl-btn-red {
+  background: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.40);
+}
+
 .palette-btn .icon {
   font-size: 14px;
   line-height: 1;
@@ -589,15 +605,15 @@ mark.study-hl-red {
   color: inherit;
 }
 :root[data-theme='light'] #md-body.tool-pen-yellow ::selection {
-  background: rgba(176, 96, 0, 0.22);
+  background: rgba(254, 240, 138, 0.90);
   color: inherit;
 }
 :root[data-theme='light'] #md-body.tool-pen-green ::selection {
-  background: rgba(24, 128, 56, 0.20);
+  background: rgba(187, 247, 208, 0.85);
   color: inherit;
 }
 :root[data-theme='light'] #md-body.tool-pen-red ::selection {
-  background: rgba(217, 56, 56, 0.20);
+  background: rgba(254, 202, 202, 0.80);
   color: inherit;
 }
 
@@ -1049,12 +1065,22 @@ mark.study-hl-red {
   flex-direction: column;
   overflow: hidden;
   flex-shrink: 0;
-  /* Use width transition instead of margin to avoid layout jolt */
-  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smooth ease-out transition prevents sharp jolts and layout reflow spikes */
+  transition: width 0.28s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.28s ease;
+  will-change: width;
 }
 
 #app.notes-collapsed #notes-panel {
   width: 0;
+  border-left-color: transparent;
+  pointer-events: none;
+}
+
+/* Fix inner width so textarea placeholder and header never wrap or squish during slide */
+#notes-panel-header,
+#notes-area {
+  width: 280px;
+  min-width: 280px;
 }
 
 #notes-panel-header {

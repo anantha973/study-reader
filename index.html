@@ -154,6 +154,19 @@ window.__STUDY_INDEX__ = {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Reader — OVGU</title>
 
+<!-- Block transitions on first paint to prevent notes panel animating 280→0 on load -->
+<style>
+  .no-transitions, .no-transitions * { transition: none !important; }
+</style>
+<script>
+  // Apply instantly — before any CSS transitions fire
+  document.documentElement.classList.add('no-transitions');
+  // Restore transitions after first paint settles
+  requestAnimationFrame(() => requestAnimationFrame(() =>
+    document.documentElement.classList.remove('no-transitions')
+  ));
+</script>
+
 <!-- KaTeX -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -170,7 +183,7 @@ window.__STUDY_INDEX__ = {
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app">
+<div id="app" class="notes-collapsed">
 
   <!-- Mobile backdrop -->
   <div id="sidebar-backdrop" title="Close sidebar"></div>
