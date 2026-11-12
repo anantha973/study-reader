@@ -11,6 +11,10 @@
     {
       "name": "Bayesian Learning And Assignment 3 Defense Guide",
       "path": "courses/ML/notes/Bayesian_Learning_and_Assignment_3_Defense_Guide.md"
+    },
+    {
+      "name": "2026 11 12 Bayesian Concept Struggle And Transcript",
+      "path": "courses/ML/transcripts/2026-11-12_Bayesian_Concept_Struggle_and_Transcript.md"
     }
   ],
   "Digital Information Processing": [
@@ -86,6 +90,14 @@
     }
   ],
   "German": [
+    {
+      "name": "Drawing 2026 11 01 18.52.48.excalidraw",
+      "path": "courses/German/A1-Listening/Test-02_OESD-Zertifikat-A1_Modellsatz/Drawing 2026-11-01 18.52.48.excalidraw.md"
+    },
+    {
+      "name": "Za1 Transkription",
+      "path": "courses/German/A1-Listening/Test-02_OESD-Zertifikat-A1_Modellsatz/ZA1_Transkription.md"
+    },
     {
       "name": "Action Plan",
       "path": "courses/German/ACTION_PLAN.md"
