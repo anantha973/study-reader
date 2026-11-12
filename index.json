@@ -1,4 +1,18 @@
 {
+  "ML": [
+    {
+      "name": "Overview",
+      "path": "courses/ML/README.md"
+    },
+    {
+      "name": "Sheet3",
+      "path": "courses/ML/exercises/sheet3.md"
+    },
+    {
+      "name": "Bayesian Learning And Assignment 3 Defense Guide",
+      "path": "courses/ML/notes/Bayesian_Learning_and_Assignment_3_Defense_Guide.md"
+    }
+  ],
   "Digital Information Processing": [
     {
       "name": "Overview",
@@ -73,10 +87,6 @@
   ],
   "German": [
     {
-      "name": "Za1 Transkription",
-      "path": "courses/German/A1-Listening/Test-02_OESD-Zertifikat-A1_Modellsatz/ZA1_Transkription.md"
-    },
-    {
       "name": "Action Plan",
       "path": "courses/German/ACTION_PLAN.md"
     },
@@ -103,6 +113,10 @@
     {
       "name": "Ep105 Hoerverstehen Verbessern",
       "path": "courses/German/created-material/transcripts/ep105_hoerverstehen_verbessern.md"
+    },
+    {
+      "name": "Ep127 Aller Anfang Ist Schwer",
+      "path": "courses/German/created-material/transcripts/ep127_aller_anfang_ist_schwer.md"
     },
     {
       "name": "00 Master Index",
@@ -167,6 +181,10 @@
     {
       "name": "C Test Master Guide And Vocabulary",
       "path": "courses/German/exam-prep/C-Test_Master_Guide_and_Vocabulary.md"
+    },
+    {
+      "name": "German Flashcards Overview",
+      "path": "courses/German/german-flashcards/README.md"
     }
   ]
 }
