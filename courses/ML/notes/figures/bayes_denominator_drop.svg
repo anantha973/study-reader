@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 540" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .main-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 700; fill: #0f172a; }
+      .sub-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; fill: #64748b; }
+      .box { rx: 8px; stroke-width: 1.5px; }
+      .box-label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; }
+      .math-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; }
+      .math-text { font-family: "Cambria Math", "Times New Roman", Georgia, serif; font-size: 16px; font-weight: 600; }
+      .math-large { font-family: "Cambria Math", "Times New Roman", Georgia, serif; font-size: 18px; font-weight: 700; }
+      .math-sub { font-family: "Cambria Math", "Times New Roman", Georgia, serif; font-size: 13px; }
+      .annotation { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #475569; }
+      .arrow { stroke: #3b82f6; stroke-width: 2.5; fill: none; stroke-linecap: round; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="980" height="540" class="bg" />
+
+  <!-- Header -->
+  <text x="40" y="38" class="main-title">Formulaic Derivation: Dropping the Evidence Denominator</text>
+  <text x="40" y="58" class="sub-title">Why the summation P(x) = ∑ P(x|v_k)P(v_k) can be eliminated when computing the MAP hypothesis</text>
+
+  <!-- Step 1: Full Bayes Theorem with Expanded Summation -->
+  <g transform="translate(40, 85)">
+    <rect width="430" height="235" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="14" y="14" width="65" height="22" rx="4" fill="#e2e8f0" />
+    <text x="46" y="29" text-anchor="middle" class="box-label" fill="#475569">STAGE 1</text>
+    <text x="14" y="58" class="math-title" fill="#0f172a">Exact Bayes' Theorem</text>
+    
+    <!-- Formula Box -->
+    <rect x="14" y="70" width="402" height="95" rx="6" fill="#ffffff" stroke="#e2e8f0" />
+    
+    <!-- Left Hand Side -->
+    <text x="30" y="122" class="math-large" fill="#1e3a8a">P(v<tspan baseline-shift="sub" font-size="12">j</tspan> | x)  =</text>
+
+    <!-- Fraction Numerator -->
+    <text x="260" y="100" text-anchor="middle" class="math-text" fill="#1e3a8a">P(x | v<tspan baseline-shift="sub" font-size="11">j</tspan>) · P(v<tspan baseline-shift="sub" font-size="11">j</tspan>)</text>
+    
+    <!-- Fraction Bar -->
+    <line x1="135" y1="112" x2="385" y2="112" stroke="#1e293b" stroke-width="1.8" />
+    
+    <!-- Fraction Denominator (Circled & Highlighted in Red) -->
+    <rect x="145" y="118" width="230" height="38" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 2" />
+    <text x="260" y="142" text-anchor="middle" class="math-text" fill="#b91c1c">∑<tspan baseline-shift="sub" font-size="10">k=1</tspan><tspan baseline-shift="super" font-size="10">|V|</tspan> P(x | v<tspan baseline-shift="sub" font-size="11">k</tspan>) · P(v<tspan baseline-shift="sub" font-size="11">k</tspan>)</text>
+
+    <!-- Explanation under formula -->
+    <text x="14" y="185" class="annotation">• <tspan font-weight="600" fill="#0f172a">Numerator:</tspan> Joint likelihood of data and class v<tspan baseline-shift="sub">j</tspan>.</text>
+    <text x="14" y="205" class="annotation">• <tspan font-weight="600" fill="#dc2626">Circled Denominator P(x):</tspan> Sum of all class likelihoods.</text>
+    <text x="14" y="222" class="annotation">   Normalizes the result into a valid [0, 1] probability.</text>
+  </g>
+
+  <!-- Transition Arrow & Why We Drop It -->
+  <g transform="translate(470, 150)">
+    <path d="M 15 50 L 50 50" class="arrow" marker-end="url(#arrow)" />
+    <rect x="-10" y="-35" width="85" height="48" rx="5" fill="#fff7ed" stroke="#f97316" stroke-width="1.2" />
+    <text x="32" y="-18" text-anchor="middle" font-family="sans-serif" font-size="10.5px" font-weight="700" fill="#c2410c">Apply</text>
+    <text x="32" y="-4" text-anchor="middle" font-family="sans-serif" font-size="10.5px" font-weight="700" fill="#c2410c">argmax</text>
+  </g>
+
+  <!-- Step 2: The MAP Rule & Dropping the Denominator -->
+  <g transform="translate(530, 85)">
+    <rect width="410" height="235" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" />
+    <rect x="14" y="14" width="65" height="22" rx="4" fill="#dbeafe" />
+    <text x="46" y="29" text-anchor="middle" class="box-label" fill="#1d4ed8">STAGE 2</text>
+    <text x="14" y="58" class="math-title" fill="#1e3a8a">The MAP Elimination</text>
+
+    <!-- Formula Box -->
+    <rect x="14" y="70" width="382" height="95" rx="6" fill="#ffffff" stroke="#93c5fd" />
+    <text x="25" y="105" class="math-text" fill="#1e3a8a">v<tspan baseline-shift="sub" font-size="11">MAP</tspan> = argmax<tspan baseline-shift="sub" font-size="11">v<tspan baseline-shift="sub">j</tspan> ∈ V</tspan></text>
+    
+    <!-- Strikethrough Denominator Display -->
+    <text x="230" y="98" text-anchor="middle" class="math-text" fill="#1e3a8a">P(x | v<tspan baseline-shift="sub" font-size="11">j</tspan>) · P(v<tspan baseline-shift="sub" font-size="11">j</tspan>)</text>
+    <line x1="165" y1="108" x2="295" y2="108" stroke="#94a3b8" stroke-width="1.5" />
+    
+    <text x="230" y="128" text-anchor="middle" class="math-text" fill="#94a3b8">P(x)</text>
+    <!-- Big Red Strike Cross -->
+    <line x1="200" y1="116" x2="260" y2="136" stroke="#ef4444" stroke-width="2.5" />
+    <line x1="260" y1="116" x2="200" y2="136" stroke="#ef4444" stroke-width="2.5" />
+
+    <!-- Resulting MAP -->
+    <rect x="25" y="138" width="360" height="22" rx="4" fill="#dbeafe" />
+    <text x="205" y="154" text-anchor="middle" class="math-text" fill="#1d4ed8">v<tspan baseline-shift="sub" font-size="11">MAP</tspan> = argmax<tspan baseline-shift="sub" font-size="11">v<tspan baseline-shift="sub">j</tspan></tspan>  P(x | v<tspan baseline-shift="sub" font-size="11">j</tspan>) · P(v<tspan baseline-shift="sub" font-size="11">j</tspan>)</text>
+
+    <!-- Why dropped text -->
+    <text x="14" y="185" class="annotation">• <tspan font-weight="700" fill="#1e40af">Why it drops:</tspan> The denominator ∑ P(x|v<tspan baseline-shift="sub">k</tspan>)P(v<tspan baseline-shift="sub">k</tspan>)</text>
+    <text x="14" y="203" class="annotation">   has <tspan font-weight="700" fill="#dc2626">NO index j</tspan>. It evaluates to the exact same</text>
+    <text x="14" y="221" class="annotation">   constant number for Class 1, Class 2, etc.</text>
+  </g>
+
+  <!-- Step 3: Bottom Full Banner - The Naive Bayes Approximation -->
+  <g transform="translate(40, 340)">
+    <rect width="900" height="175" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" />
+    <rect x="16" y="14" width="65" height="22" rx="4" fill="#dcfce7" />
+    <text x="48" y="29" text-anchor="middle" class="box-label" fill="#15803d">STAGE 3</text>
+    <text x="95" y="30" class="math-title" fill="#14532d">The "Naive" Factorization Step</text>
+
+    <!-- Factorization Math Display -->
+    <g transform="translate(20, 50)">
+      <!-- Left side: Joint -->
+      <rect x="0" y="0" width="370" height="52" rx="6" fill="#ffffff" stroke="#86efac" />
+      <text x="185" y="32" text-anchor="middle" class="math-large" fill="#15803d">P(a₁, a₂, ..., a<tspan baseline-shift="sub" font-size="12">n</tspan> | v<tspan baseline-shift="sub" font-size="12">j</tspan>)</text>
+
+      <!-- Arrow with assumption label -->
+      <path d="M 385 26 L 465 26" class="arrow" stroke="#16a34a" marker-end="url(#arrow)" />
+      <text x="425" y="16" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="700" fill="#16a34a">Assume Cond.</text>
+      <text x="425" y="42" text-anchor="middle" font-family="sans-serif" font-size="11px" font-weight="700" fill="#16a34a">Independence</text>
+
+      <!-- Right side: Product -->
+      <rect x="480" y="0" width="380" height="52" rx="6" fill="#ffffff" stroke="#86efac" />
+      <text x="670" y="33" text-anchor="middle" class="math-large" fill="#15803d">∏<tspan baseline-shift="sub" font-size="12">i=1</tspan><tspan baseline-shift="super" font-size="12">n</tspan> P(a<tspan baseline-shift="sub" font-size="12">i</tspan> | v<tspan baseline-shift="sub" font-size="12">j</tspan>)</text>
+    </g>
+
+    <!-- Final Result Box -->
+    <rect x="20" y="115" width="860" height="45" rx="6" fill="#14532d" />
+    <text x="450" y="144" text-anchor="middle" font-family="Cambria Math, Georgia, serif" font-size="18px" font-weight="700" fill="#ffffff">
+      v<tspan baseline-shift="sub" font-size="12">NB</tspan> = argmax<tspan baseline-shift="sub" font-size="12">v<tspan baseline-shift="sub">j</tspan> ∈ V</tspan>  P(v<tspan baseline-shift="sub" font-size="12">j</tspan>) · ∏<tspan baseline-shift="sub" font-size="12">i=1</tspan><tspan baseline-shift="super" font-size="12">n</tspan> P(a<tspan baseline-shift="sub" font-size="12">i</tspan> | v<tspan baseline-shift="sub" font-size="12">j</tspan>)
+    </text>
+  </g>
+</svg>

@@ -74,6 +74,8 @@ The diagnosis shifts decisively from $h_{\text{MAP}} = \neg c$ to $h_{\text{MAP}
 
 ### 2.1 The Derivation Pipeline: Bayes $\to$ MAP $\to$ Naive Bayes
 
+![Formulaic Derivation: Dropping the Evidence Denominator](figures/bayes_denominator_drop.svg)
+
 ![Naive Bayes Architecture](figures/naive_bayes_architecture.svg)
 
 #### Step 1: The True Joint Posterior
