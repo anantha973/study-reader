@@ -15,7 +15,5 @@ Interactive study notes dashboard for **M.Sc. Medical Systems Engineering** at *
 ### Courses Included
 - **Digital Information Processing (DIP)** (Prof. Dr. rer. nat. Andreas Wendemuth)
 - **Computed Tomography I — Methods on CT** (Dr. rer. medic. Martin Volk)
-- **Clinical Aspects in Imaging and Radiation Therapy**
-- **Introduction to Programming Techniques in Engineering**
 - **Mathematical Foundations**
 - **German (Deutsch)** (A1/A2 Vocabulary, Grammar, Thematic Units & Cheat Sheets)

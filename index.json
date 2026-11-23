@@ -49,18 +49,6 @@
       "path": "courses/Computed Tomography I - Methods on CT/notes/Tutorial_02_Solutions_and_Guide.md"
     }
   ],
-  "Clinical Aspects in Imaging and Radiation Therapy": [
-    {
-      "name": "Overview",
-      "path": "courses/Clinical Aspects in Imaging and Radiation Therapy/README.md"
-    }
-  ],
-  "Introduction to Programming Techniques in Engineering": [
-    {
-      "name": "Overview",
-      "path": "courses/Introduction to Programming Techniques in Engineering/README.md"
-    }
-  ],
   "Mathematical Foundations": [
     {
       "name": "Overview",
@@ -69,24 +57,6 @@
     {
       "name": "MF Lecture 03 Master Explainer",
       "path": "courses/Mathematical Foundations/notes/MF_Lecture_03_Master_Explainer.md"
-    }
-  ],
-  "05-solution-design-in-medical-engineering": [
-    {
-      "name": "ICU Copilot Code Submission Overview",
-      "path": "courses/05-solution-design-in-medical-engineering/ICU_Copilot_Code_Submission/README.md"
-    },
-    {
-      "name": "Overview",
-      "path": "courses/05-solution-design-in-medical-engineering/README.md"
-    },
-    {
-      "name": "Architectural Council Critical Analysis",
-      "path": "courses/05-solution-design-in-medical-engineering/architectural_council_critical_analysis.md"
-    },
-    {
-      "name": "Presentation Script 5min",
-      "path": "courses/05-solution-design-in-medical-engineering/presentation/presentation_script_5min.md"
     }
   ],
   "German": [

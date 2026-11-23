@@ -318,8 +318,6 @@ function shortenCourse(name) {
   const map = {
     "Digital Information Processing": "Digital Info Processing",
     "Computed Tomography I - Methods on CT": "Computed Tomography I",
-    "Clinical Aspects in Imaging and Radiation Therapy": "Clinical Aspects",
-    "Introduction to Programming Techniques in Engineering": "Programming Techniques",
     "Mathematical Foundations": "Mathematical Foundations",
     "German": "German (Deutsch)",
   };
