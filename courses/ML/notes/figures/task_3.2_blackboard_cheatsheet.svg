@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .header-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 18px; font-weight: 800; fill: #0f172a; }
+      .header-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; fill: #64748b; }
+      .card { rx: 8px; stroke-width: 1.5px; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; font-weight: 700; }
+      .math-formula { font-family: "Cambria Math", "Times New Roman", Georgia, serif; font-size: 14px; font-weight: 600; }
+      .math-formula-sm { font-family: "Cambria Math", "Times New Roman", Georgia, serif; font-size: 13px; font-weight: 600; }
+      .bullet { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11.5px; fill: #334155; }
+      .badge-text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; }
+      .highlight { font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Clean Pure White Canvas with subtle border -->
+  <rect width="920" height="600" class="bg" />
+  <rect x="8" y="8" width="904" height="584" rx="10" fill="none" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- Compact Header Bar -->
+  <g transform="translate(30, 24)">
+    <rect x="0" y="0" width="860" height="42" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="16" y="26" class="header-title">Task 3.2: Naive Bayes Blackboard Cheatsheet</text>
+    <text x="844" y="26" text-anchor="end" class="header-sub">OVGU ML • Prof. Nürnberger • Exam Prep</text>
+  </g>
+
+  <!-- ================= QUADRANT 1: (a) Formulas & MAP ================= -->
+  <g transform="translate(30, 78)">
+    <rect width="420" height="240" rx="8" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5" />
+    <!-- Header Badge -->
+    <rect x="14" y="12" width="220" height="24" rx="4" fill="#e0f2fe" />
+    <text x="22" y="28" class="card-title" fill="#0369a1">(a) Formulas &amp; MAP Connection</text>
+
+    <!-- Formula 1: Bayes -->
+    <text x="16" y="58" class="bullet"><tspan font-weight="700" fill="#0f172a">1. Bayes' Rule:</tspan></text>
+    <rect x="16" y="66" width="388" height="34" rx="4" fill="#ffffff" stroke="#bae6fd" />
+    <text x="210" y="88" text-anchor="middle" class="math-formula" fill="#0369a1">
+      P(v<tspan baseline-shift="sub" font-size="10">j</tspan> | x) = [ P(x | v<tspan baseline-shift="sub" font-size="10">j</tspan>) · P(v<tspan baseline-shift="sub" font-size="10">j</tspan>) ] / P(x)
+    </text>
+
+    <!-- Formula 2: MAP -->
+    <text x="16" y="118" class="bullet"><tspan font-weight="700" fill="#0f172a">2. MAP Rule</tspan> (denominator P(x) is constant across classes):</text>
+    <rect x="16" y="126" width="388" height="34" rx="4" fill="#ffffff" stroke="#bae6fd" />
+    <text x="210" y="148" text-anchor="middle" class="math-formula" fill="#0369a1">
+      v<tspan baseline-shift="sub" font-size="10">MAP</tspan> = argmax<tspan baseline-shift="sub" font-size="10">v<tspan baseline-shift="sub">j</tspan> ∈ V</tspan> [ P(x | v<tspan baseline-shift="sub" font-size="10">j</tspan>) · P(v<tspan baseline-shift="sub" font-size="10">j</tspan>) ]
+    </text>
+
+    <!-- Formula 3: Naive Bayes -->
+    <text x="16" y="178" class="bullet"><tspan font-weight="700" fill="#0f172a">3. Naive Bayes</tspan> (factorizing joint likelihood):</text>
+    <rect x="16" y="186" width="388" height="38" rx="4" fill="#0284c7" />
+    <text x="210" y="210" text-anchor="middle" class="math-formula" fill="#ffffff">
+      v<tspan baseline-shift="sub" font-size="10">NB</tspan> = argmax<tspan baseline-shift="sub" font-size="10">v<tspan baseline-shift="sub">j</tspan> ∈ V</tspan>  P(v<tspan baseline-shift="sub" font-size="10">j</tspan>) · ∏<tspan baseline-shift="sub" font-size="9">i=1</tspan><tspan baseline-shift="super" font-size="9">n</tspan> P(a<tspan baseline-shift="sub" font-size="10">i</tspan> | v<tspan baseline-shift="sub" font-size="10">j</tspan>)
+    </text>
+  </g>
+
+  <!-- ================= QUADRANT 2: (b) The "Naive" Assumption ================= -->
+  <g transform="translate(470, 78)">
+    <rect width="420" height="240" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" />
+    <!-- Header Badge -->
+    <rect x="14" y="12" width="220" height="24" rx="4" fill="#dcfce7" />
+    <text x="22" y="28" class="card-title" fill="#15803d">(b) The "Naive" Assumption</text>
+
+    <!-- The Assumption Formula -->
+    <text x="16" y="58" class="bullet"><tspan font-weight="700" fill="#0f172a">• Assumption:</tspan> Features are conditionally independent:</text>
+    <rect x="16" y="66" width="388" height="42" rx="4" fill="#ffffff" stroke="#bbf7d0" />
+    <text x="210" y="92" text-anchor="middle" class="math-formula" fill="#15803d">
+      P(a₁, a₂, ..., a<tspan baseline-shift="sub" font-size="10">n</tspan> | v<tspan baseline-shift="sub" font-size="10">j</tspan>) = ∏<tspan baseline-shift="sub" font-size="9">i=1</tspan><tspan baseline-shift="super" font-size="9">n</tspan> P(a<tspan baseline-shift="sub" font-size="10">i</tspan> | v<tspan baseline-shift="sub" font-size="10">j</tspan>)
+    </text>
+
+    <!-- Relevance Points -->
+    <text x="16" y="128" class="bullet"><tspan font-weight="700" fill="#0f172a">• Relevance 1: Parameter Reduction (Prevents Curse of Dim.)</tspan></text>
+    <rect x="16" y="136" width="388" height="34" rx="4" fill="#ffffff" stroke="#bbf7d0" />
+    <text x="210" y="158" text-anchor="middle" class="math-formula-sm" fill="#14532d">
+      O(2<tspan baseline-shift="super" font-size="9">n</tspan> · |V|)  ⟶  O(n · 2 · |V|)   [e.g., 2⁵⁰ ≈ 10¹⁵ ⟶ 200]
+    </text>
+
+    <text x="16" y="190" class="bullet"><tspan font-weight="700" fill="#0f172a">• Relevance 2: 0-1 Loss Robustness</tspan></text>
+    <text x="26" y="206" class="bullet">Even when independence is violated, argmax decision</text>
+    <text x="26" y="222" class="bullet">remains correct as long as class rank-order is preserved.</text>
+  </g>
+
+  <!-- ================= QUADRANT 3: (c) Estimation & Inference ================= -->
+  <g transform="translate(30, 330)">
+    <rect width="420" height="240" rx="8" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5" />
+    <!-- Header Badge -->
+    <rect x="14" y="12" width="220" height="24" rx="4" fill="#f3e8ff" />
+    <text x="22" y="28" class="card-title" fill="#7e22ce">(c) Probability Estimation</text>
+
+    <!-- Prior Estimation -->
+    <text x="16" y="58" class="bullet"><tspan font-weight="700" fill="#0f172a">1. Class Prior P(v<tspan baseline-shift="sub" font-size="10">j</tspan>):</tspan></text>
+    <rect x="16" y="66" width="388" height="32" rx="4" fill="#ffffff" stroke="#e9d5ff" />
+    <text x="210" y="87" text-anchor="middle" class="math-formula" fill="#7e22ce">
+      P(v<tspan baseline-shift="sub" font-size="10">j</tspan>) = |D<tspan baseline-shift="sub" font-size="10">vj</tspan>| / |D|  (Relative Class Frequency)
+    </text>
+
+    <!-- Discrete Likelihood -->
+    <text x="16" y="116" class="bullet"><tspan font-weight="700" fill="#0f172a">2. Discrete Feature Likelihood (MLE):</tspan></text>
+    <rect x="16" y="124" width="388" height="32" rx="4" fill="#ffffff" stroke="#e9d5ff" />
+    <text x="210" y="145" text-anchor="middle" class="math-formula" fill="#7e22ce">
+      P(a<tspan baseline-shift="sub" font-size="10">i</tspan> | v<tspan baseline-shift="sub" font-size="10">j</tspan>) = n<tspan baseline-shift="sub" font-size="10">c</tspan> / n = count(a<tspan baseline-shift="sub" font-size="10">i</tspan> ∧ v<tspan baseline-shift="sub" font-size="10">j</tspan>) / count(v<tspan baseline-shift="sub" font-size="10">j</tspan>)
+    </text>
+
+    <!-- Continuous Likelihood -->
+    <text x="16" y="174" class="bullet"><tspan font-weight="700" fill="#0f172a">3. Continuous (Gaussian Naive Bayes):</tspan></text>
+    <rect x="16" y="182" width="388" height="36" rx="4" fill="#ffffff" stroke="#e9d5ff" />
+    <text x="210" y="205" text-anchor="middle" class="math-formula-sm" fill="#6b21a8">
+      P(a<tspan baseline-shift="sub" font-size="9">i</tspan> | v<tspan baseline-shift="sub" font-size="9">j</tspan>) = (1 / √(2πσ²)) · exp( - (a<tspan baseline-shift="sub" font-size="9">i</tspan> - μ)² / (2σ²) )
+    </text>
+  </g>
+
+  <!-- ================= QUADRANT 4: (d) Missing Values vs Zero Freq ================= -->
+  <g transform="translate(470, 330)">
+    <rect width="420" height="240" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5" />
+    <!-- Header Badge -->
+    <rect x="14" y="12" width="240" height="24" rx="4" fill="#fef3c7" />
+    <text x="22" y="28" class="card-title" fill="#b45309">(d) Missing Values vs. Zero Freq</text>
+
+    <!-- Missing Values -->
+    <text x="16" y="58" class="bullet"><tspan font-weight="700" fill="#b45309">• Missing Values (At Test Time):</tspan></text>
+    <text x="26" y="74" class="bullet">Marginalize out missing attribute (sums to 1.0):</text>
+    <rect x="16" y="80" width="388" height="30" rx="4" fill="#ffffff" stroke="#fde68a" />
+    <text x="210" y="100" text-anchor="middle" class="math-formula-sm" fill="#92400e">
+      ∑<tspan baseline-shift="sub" font-size="8">ai</tspan> P(a<tspan baseline-shift="sub" font-size="8">i</tspan> | v<tspan baseline-shift="sub" font-size="8">j</tspan>) = 1  ⟹  Omit P(a<tspan baseline-shift="sub" font-size="8">i</tspan> | v<tspan baseline-shift="sub" font-size="8">j</tspan>) from product
+    </text>
+
+    <!-- Zero Frequency -->
+    <text x="16" y="128" class="bullet"><tspan font-weight="700" fill="#b45309">• Zero Frequency Problem (n_c = 0 in training):</tspan></text>
+    <text x="26" y="144" class="bullet">MLE yields 0, wiping entire product to 0. Cured via:</text>
+    
+    <!-- m-estimate formula box -->
+    <rect x="16" y="152" width="388" height="42" rx="4" fill="#b45309" />
+    <text x="210" y="177" text-anchor="middle" class="math-formula" fill="#ffffff">
+      P(a<tspan baseline-shift="sub" font-size="10">i</tspan> | v<tspan baseline-shift="sub" font-size="10">j</tspan>) = [ n<tspan baseline-shift="sub" font-size="10">c</tspan> + m · p ] / [ n + m ]
+    </text>
+    <text x="210" y="212" text-anchor="middle" class="bullet" font-weight="600" fill="#78350f">
+      (m = virtual weight / sample size,  p = 1/k uniform prior)
+    </text>
+  </g>
+</svg>

@@ -6,7 +6,15 @@
     },
     {
       "name": "Sheet3",
-      "path": "courses/ML/exercises/sheet3.md"
+      "path": "courses/ML/exercises/sheet 3/sheet3.md"
+    },
+    {
+      "name": "Sheet4",
+      "path": "courses/ML/exercises/sheet 4/sheet4.md"
+    },
+    {
+      "name": "Sheet4",
+      "path": "courses/ML/exercises/sheet4.md"
     },
     {
       "name": "Bayesian Learning And Assignment 3 Defense Guide",
@@ -15,48 +23,6 @@
     {
       "name": "2026 11 12 Bayesian Concept Struggle And Transcript",
       "path": "courses/ML/transcripts/2026-11-12_Bayesian_Concept_Struggle_and_Transcript.md"
-    }
-  ],
-  "Digital Information Processing": [
-    {
-      "name": "Overview",
-      "path": "courses/Digital Information Processing/README.md"
-    },
-    {
-      "name": "DIP Lessons 1 2 Exam Prep",
-      "path": "courses/Digital Information Processing/notes/DIP_Lessons_1_2_Exam_Prep.md"
-    }
-  ],
-  "Computed Tomography I - Methods on CT": [
-    {
-      "name": "Overview",
-      "path": "courses/Computed Tomography I - Methods on CT/README.md"
-    },
-    {
-      "name": "Lecture 01 And 02 Master Notes",
-      "path": "courses/Computed Tomography I - Methods on CT/notes/Lecture_01_and_02_Master_Notes.md"
-    },
-    {
-      "name": "Tutorial 01 Solutions",
-      "path": "courses/Computed Tomography I - Methods on CT/notes/Tutorial_01_Solutions.md"
-    },
-    {
-      "name": "Tutorial 01 Vocab And Math Guide",
-      "path": "courses/Computed Tomography I - Methods on CT/notes/Tutorial_01_Vocab_and_Math_Guide.md"
-    },
-    {
-      "name": "Tutorial 02 Solutions And Guide",
-      "path": "courses/Computed Tomography I - Methods on CT/notes/Tutorial_02_Solutions_and_Guide.md"
-    }
-  ],
-  "Mathematical Foundations": [
-    {
-      "name": "Overview",
-      "path": "courses/Mathematical Foundations/README.md"
-    },
-    {
-      "name": "MF Lecture 03 Master Explainer",
-      "path": "courses/Mathematical Foundations/notes/MF_Lecture_03_Master_Explainer.md"
     }
   ],
   "German": [

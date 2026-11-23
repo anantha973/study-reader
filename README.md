@@ -13,6 +13,7 @@ Interactive study notes dashboard for **M.Sc. Medical Systems Engineering** at *
 * **Mobile & iPad ready** for studying anywhere
 
 ### Courses Included
+- **ML (Machine Learning)**
 - **Digital Information Processing (DIP)** (Prof. Dr. rer. nat. Andreas Wendemuth)
 - **Computed Tomography I — Methods on CT** (Dr. rer. medic. Martin Volk)
 - **Mathematical Foundations**
